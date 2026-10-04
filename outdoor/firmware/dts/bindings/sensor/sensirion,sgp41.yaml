@@ -1,0 +1,3 @@
+description: Sensirion SGP41 VOC and NOx gas sensor
+compatible: "sensirion,sgp41"
+include: i2c-device.yaml

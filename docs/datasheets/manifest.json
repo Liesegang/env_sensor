@@ -1,0 +1,186 @@
+{
+  "organized_on": "2026-10-04",
+  "documents": [
+    {
+      "file": "Bosch_BMV080_datasheet.pdf",
+      "model": "Bosch Sensortec / BMV080",
+      "pages": 53,
+      "bytes": 7364007,
+      "sha256": "3127ed447f56d4fcb872cb3ad26a47664d24c95173266da06f8702953140a0f1",
+      "source_url": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf",
+      "provenance": "今回の照合用に取得した公式資料。BST-BMV080-DS000-12。"
+    },
+    {
+      "file": "Molex_5035661302_drawing.pdf",
+      "model": "Molex / 5035661302",
+      "pages": 4,
+      "bytes": 725215,
+      "sha256": "722f8b29741a5ac96e8a6c04307f5a51355b8c8fc3f2c28ded6bbe3557ce3610",
+      "source_url": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/503/503566/5035661302_sd.pdf",
+      "provenance": "メーカー図面5035661001 PSD 000 Rev A。公式配布元への直接取得がタイムアウトしたため、IC-Components掲載の同じメーカー図面を保存。",
+      "retrieved_from": "https://www.ic-components.nl/files/de/5035661302.pdf"
+    },
+    {
+      "file": "Kyocera_046844713002846_drawing.pdf",
+      "model": "KYOCERA AVX / 046844713002846+",
+      "pages": 4,
+      "bytes": 406355,
+      "sha256": "af91192982ac719ae0bb5639874240d0295504bf1c720f0df18a76dd2015c66b",
+      "source_url": "https://ele.kyocera.com/assets/products/connector/drawing/BJS6844006.pdf",
+      "provenance": "BMV080推奨コネクターの比較用に取得したメーカー公式原図。BJS6844006 Rev J、2026-07-01。PDF原本を保持。"
+    },
+    {
+      "file": "AS3935_datasheet.pdf",
+      "model": "ScioSense / AS3935",
+      "pages": 44,
+      "bytes": 1068387,
+      "sha256": "0dcc113065447983f02a014b1c76a23756588bb4e832ef63c769509e7735375e",
+      "source_url": "https://www.sciosense.com/wp-content/uploads/2024/01/AS3935-Datasheet.pdf",
+      "provenance": "ドライバー調査で取得済みの公式資料を集約。"
+    },
+    {
+      "file": "opt4001.pdf",
+      "model": "Texas Instruments / OPT4001",
+      "pages": 56,
+      "bytes": 2478577,
+      "sha256": "a41086fcbc1dd648d28e333778b0d1b36da920919f8d896193c0bde818833bbf",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "BME690_datasheet.pdf",
+      "model": "Bosch Sensortec / BME690",
+      "pages": 60,
+      "bytes": 2067703,
+      "sha256": "9206a2afe093728b802a654aa958793fcd16432cd254395b6d81d8ef3ca0d120",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "CD_DS_STCC4_D1.pdf",
+      "model": "Sensirion / STCC4",
+      "pages": 18,
+      "bytes": 761690,
+      "sha256": "0f40a37698a88b060800bfb916cb2f3883654ef8e6121467048cb5484c355ed9",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "HT_DS_Datasheet_SHT4x_5.pdf",
+      "model": "Sensirion / SHT4x・SHT45",
+      "pages": 24,
+      "bytes": 937107,
+      "sha256": "dbf446e3ec43aa75dd631682997712a8527bcf2da9624a2521512bc94f1cdf4a",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "Sensirion_Gas_Sensors_Datasheet_SGP41.pdf",
+      "model": "Sensirion / SGP41",
+      "pages": 22,
+      "bytes": 1067257,
+      "sha256": "331f35ed1f027a74ec79b302763f7adb920759bc055b3d2ada17822bb0005bec",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "Sensirion_Datasheet_SFA40.pdf",
+      "model": "Sensirion / SFA40",
+      "pages": 19,
+      "bytes": 929839,
+      "sha256": "9e8a3531c827c747eb9e702d02ea954af0cf1cbfcc2a68fff0deb166aa851ed7",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "Sensirion_Handling_Instructions_SFA40.pdf",
+      "model": "Sensirion / SFA40 Handling Instructions",
+      "pages": 6,
+      "bytes": 288022,
+      "sha256": "4d9864525e316f2350e11400e7a27d731d6ba35d0aca456812cbc43d5bc2061d",
+      "source_url": "https://sensirion.com/media/documents/57BBCF4B/6A38E93F/Handling-Instructions_SFA40.pdf",
+      "provenance": "メーカー公式の取扱・実装資料を原本のまま取得。Version 1.0、June 2026。膜の除去禁止とリフロー禁止を確認。"
+    },
+    {
+      "file": "ES4L15BA1_DataSheet_V1_0_20260624E.pdf",
+      "model": "KAGA FEI / ES4L15BA1",
+      "pages": 38,
+      "bytes": 1893068,
+      "sha256": "8b3cb44eacce5d6f8de672f59940648ac067151fe0abf81c0629165634700820",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "nRF54L15_nRF54L10_nRF54L05_Datasheet_v1.0.pdf",
+      "model": "Nordic / nRF54L15・nRF54L10・nRF54L05",
+      "pages": 940,
+      "bytes": 13174442,
+      "sha256": "ade0d340ba95e31f8299e6721b08d53a702962335d9b87fa202f8d2767603554",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "nPM1300_PS_v1.3.pdf",
+      "model": "Nordic / nPM1300",
+      "pages": 175,
+      "bytes": 4540533,
+      "sha256": "b1cf8bf90d2a03cae27ebe9c8d17ee5c815614cef2bb4a997a65e1def8550924",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "ujc-hp-3-smt-tr.pdf",
+      "model": "Same Sky / UJC-HP-3-SMT-TR",
+      "pages": 4,
+      "bytes": 478442,
+      "sha256": "9460f5830ba67878b48e90885767ac9dfe851d6ca380ab170b0c5a99403fd1d6",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "ujc-hp-3-smt-tr_powered_by_type-c.pdf",
+      "model": "USB Type-C電源接続図",
+      "pages": 1,
+      "bytes": 847253,
+      "sha256": "5f034acac1fd3bd7b324770c3f725919b68f662105d98a997e61405a39afb3dd",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "3.6inch_e-Paper_HAT+.pdf",
+      "model": "Waveshare / 3.6inch e-Paper HAT+",
+      "pages": 10,
+      "bytes": 897048,
+      "sha256": "0c9d4a5ce8ce3ff1c15f4404c6236a988f9bc3dacef2f6faf7ac5b5269bf0726",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "3.6inch_e-Paper_HAT+_Schematic.pdf",
+      "model": "Waveshare / 3.6inch e-Paper HAT+回路図",
+      "pages": 2,
+      "bytes": 844862,
+      "sha256": "6a24138d95623faa13cdd3a81cf052ca57a06eda82a041d35252b393a1d41d4b",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "AKIZUKI-SK-22H09G5.pdf",
+      "model": "スライドスイッチ / SK-22H09G5",
+      "pages": 5,
+      "bytes": 425250,
+      "sha256": "89f2dabb8db4c61c494db4cf473fc4045c25d89ef24514117781407a6583f04d",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    },
+    {
+      "file": "TMHU27.pdf",
+      "model": "トグルスイッチ / TMHU27",
+      "pages": 2,
+      "bytes": 237183,
+      "sha256": "1f487716c031206a15fe54169fb44ba6fc68936c8e1fecdcbd3d3d279233dda3",
+      "source_url": null,
+      "provenance": "既存hardware/docsから移動。"
+    }
+  ]
+}

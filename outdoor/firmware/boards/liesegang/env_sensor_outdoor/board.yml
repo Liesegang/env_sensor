@@ -1,0 +1,6 @@
+board:
+  name: env_sensor_outdoor
+  full_name: Outdoor environment sensor (ES4L15BA1)
+  vendor: liesegang
+  socs:
+    - name: nrf54l15

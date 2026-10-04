@@ -1,0 +1,24 @@
+config APP_BMV080
+	bool "Read the BMV080 using the official Bosch SDK"
+	depends on APP_SENSOR_READ
+	default n
+	help
+	  Requires the Bosch BMV080 SDK headers and ARM Cortex-M33 libraries.
+	  Use the soft-float build with the board's default CONFIG_FPU=n.
+	  The SDK requires a 10 KiB stack; set MAIN_STACK_SIZE to at least 12288.
+
+if APP_BMV080
+
+config BMV080_SDK_INCLUDE_DIR
+	string "Directory containing bmv080.h and bmv080_defs.h"
+	default ""
+
+config BMV080_SDK_DRIVER_LIBRARY
+	string "Full path to the Cortex-M33 lib_bmv080.a"
+	default ""
+
+config BMV080_SDK_POSTPROCESSOR_LIBRARY
+	string "Full path to the matching lib_postProcessor.a"
+	default ""
+
+endif

@@ -1,0 +1,199 @@
+/dts-v1/;
+
+#include <nordic/nrf54l15_cpuapp.dtsi>
+#include <zephyr/dt-bindings/gpio/gpio.h>
+#include <zephyr/dt-bindings/i2c/i2c.h>
+#include <zephyr/dt-bindings/pinctrl/nrf-pinctrl.h>
+#include <zephyr/dt-bindings/pwm/pwm.h>
+#include <zephyr/dt-bindings/regulator/nrf5x.h>
+
+/ {
+	model = "Outdoor environment sensor (KAGA FEI ES4L15BA1)";
+	compatible = "liesegang,env-sensor-outdoor";
+
+	chosen {
+		zephyr,entropy = &psa_rng;
+		zephyr,sram = &cpuapp_sram;
+		zephyr,flash = &cpuapp_rram;
+		zephyr,flash-controller = &rram_controller;
+	};
+
+	aliases {
+		buzzer = &buzzer;
+		i2c-sensors = &i2c30;
+	};
+
+	buzzers {
+		compatible = "pwm-leds";
+
+		buzzer: buzzer {
+			/* Positive pulses turn on TR1 through the 180-ohm R1. */
+			pwms = <&pwm20 0 PWM_HZ(2000) PWM_POLARITY_NORMAL>;
+		};
+	};
+};
+
+&cpuapp_sram {
+	status = "okay";
+};
+
+&clock {
+	status = "okay";
+};
+
+&grtc {
+	owned-channels = <0 1 2 3 4 5 6 7 8 9 10 11>;
+	child-owned-channels = <3 4 7 8 9 10 11>;
+	status = "okay";
+};
+
+&lfxo {
+	/* XL2 is the buzzer pin; enabling LFXO would steal P1.01. */
+	status = "disabled";
+};
+
+&hfxo {
+	/* Explicit nRF54L15 reference crystal setup for radio bring-up. */
+	load-capacitors = "internal";
+	load-capacitance-femtofarad = <15000>;
+};
+
+&psa_rng {
+	status = "okay";
+};
+
+&regulators {
+	status = "okay";
+};
+
+&vregmain {
+	/* ES4L15BA1 requires DCDC; L1 (4.7 uH) is populated. */
+	status = "okay";
+	regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&gpiote20 {
+	status = "okay";
+};
+
+&gpiote30 {
+	status = "okay";
+};
+
+&pinctrl {
+	i2c30_default: i2c30_default {
+		group1 {
+			/* R5/R6 provide external 5.1-kohm pull-ups. */
+			psels = <NRF_PSEL(TWIM_SCL, 0, 3)>,
+				<NRF_PSEL(TWIM_SDA, 0, 4)>;
+		};
+	};
+
+	i2c30_sleep: i2c30_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SCL, 0, 3)>,
+				<NRF_PSEL(TWIM_SDA, 0, 4)>;
+			low-power-enable;
+		};
+	};
+
+	buzzer_default: buzzer_default {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 1, 1)>;
+			/* Non-inverted PWM pins initialize low in Nordic pinctrl. */
+		};
+	};
+};
+
+&i2c30 {
+	status = "okay";
+	clock-frequency = <I2C_BITRATE_STANDARD>;
+	pinctrl-0 = <&i2c30_default>;
+	pinctrl-1 = <&i2c30_sleep>;
+	pinctrl-names = "default", "sleep";
+
+	opt4001: light@45 {
+		compatible = "ti,opt4001";
+		reg = <0x45>;
+	};
+
+	as3935: lightning@3 {
+		compatible = "ams,as3935";
+		/* Verify the future module's address straps; valid addresses are 1..3. */
+		reg = <0x03>;
+	};
+
+	sfa40: formaldehyde@5d {
+		compatible = "sensirion,sfa40";
+		reg = <0x5d>;
+	};
+
+	sgp41: gas@59 {
+		compatible = "sensirion,sgp41";
+		reg = <0x59>;
+	};
+
+	bmv080: particulate@54 {
+		compatible = "bosch,bmv080";
+		reg = <0x54>;
+	};
+
+	stcc4: co2@64 {
+		compatible = "sensirion,stcc4";
+		reg = <0x64>;
+		measurement-mode = <0>;
+	};
+
+	bme690: environment@76 {
+		compatible = "bosch,bme690";
+		reg = <0x76>;
+	};
+};
+
+&pwm20 {
+	status = "okay";
+	pinctrl-0 = <&buzzer_default>;
+	pinctrl-names = "default";
+};
+
+&pinctrl {
+	sd_spi_default: sd_spi_default {
+		group1 { psels = <NRF_PSEL(SPIM_SCK, 1, 4)>, <NRF_PSEL(SPIM_MOSI, 1, 6)>; };
+		group2 { psels = <NRF_PSEL(SPIM_MISO, 1, 2)>; bias-pull-up; };
+	};
+	sd_spi_sleep: sd_spi_sleep {
+		group1 {
+			psels = <NRF_PSEL(SPIM_SCK, 1, 4)>, <NRF_PSEL(SPIM_MOSI, 1, 6)>, <NRF_PSEL(SPIM_MISO, 1, 2)>;
+			low-power-enable;
+		};
+	};
+};
+
+&spi20 {
+	status = "okay";
+	pinctrl-0 = <&sd_spi_default>;
+	pinctrl-1 = <&sd_spi_sleep>;
+	pinctrl-names = "default", "sleep";
+	cs-gpios = <&gpio2 4 GPIO_ACTIVE_LOW>;
+	sd_slot: sd@0 {
+		compatible = "zephyr,sdhc-spi-slot";
+		reg = <0>;
+		spi-max-frequency = <4000000>;
+		sd_card: sd { compatible = "zephyr,sdmmc-disk"; disk-name = "SD"; };
+	};
+};
+
+&gpio2 { status = "okay"; };
+
+&uicr {
+	/* P1.02 is the SD MISO input; disable NFC pad protection. */
+	nfct-pins-as-gpios;
+};

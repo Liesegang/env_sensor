@@ -1,0 +1,29 @@
+description: AS3935 lightning sensor with I2C interface
+compatible: "ams,as3935"
+include: i2c-device.yaml
+properties:
+  indoor:
+    type: boolean
+    description: Use indoor gain; absence selects outdoor gain.
+  noise-floor-level:
+    type: int
+    default: 2
+    enum: [0, 1, 2, 3, 4, 5, 6, 7]
+  watchdog-threshold:
+    type: int
+    default: 2
+    enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  spike-rejection:
+    type: int
+    default: 2
+    enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  minimum-lightnings:
+    type: int
+    default: 1
+    enum: [1, 5, 9, 16]
+  mask-disturbers:
+    type: boolean
+  tuning-capacitor:
+    type: int
+    enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    description: Tuning capacitance in 8-pF steps; absence preserves the existing setting.

@@ -1,0 +1,13 @@
+menu "Buzzer driver"
+
+config BUZZER_FREQUENCY_HZ
+	int "Buzzer pulse frequency (Hz)"
+	range 500 4000
+	default 2000
+
+config BUZZER_DUTY_PERMILLE
+	int "Buzzer duty in thousandths (500 = 50%)"
+	range 1 500
+	default 500
+
+endmenu

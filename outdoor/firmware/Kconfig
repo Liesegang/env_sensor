@@ -1,0 +1,67 @@
+mainmenu "Outdoor environment sensor bring-up"
+
+source "Kconfig.zephyr"
+
+config APP_BLE
+	bool "Publish packed sensor readings over one BLE characteristic"
+	depends on APP_SENSOR_READ
+	default y
+	select BT
+	select BT_PERIPHERAL
+
+rsource "driver/buzzer/Kconfig"
+
+config APP_I2C_SCAN
+	bool "Scan the sensor I2C bus once after startup"
+	default y
+	select I2C
+
+config APP_SENSOR_READ
+	bool "Read the sensors once per second"
+	default y
+	select I2C
+
+rsource "driver/bmv080/Kconfig"
+rsource "driver/as3935/Kconfig"
+rsource "driver/sfa40/Kconfig"
+
+menuconfig APP_BUZZER_TEST
+	bool "Play the startup buzzer test"
+	default n
+
+if APP_BUZZER_TEST
+
+menu "Buzzer test timing"
+
+config BUZZER_ON_MS
+	int "Duration of each beep (ms)"
+	range 1 100
+	default 50
+
+config BUZZER_INTERVAL_MS
+	int "Interval between beep starts (ms)"
+	range 1000 10000
+	default 1000
+
+config BUZZER_BEEP_COUNT
+	int "Number of beeps after startup"
+	range 1 100
+	default 3
+
+config BUZZER_STARTUP_DELAY_MS
+	int "Silent delay after startup (ms)"
+	range 1000 10000
+	default 2000
+
+endmenu
+
+endif
+
+config APP_SD_LOG
+	bool "Batch one-second sensor readings to CSV on SD every minute"
+	depends on APP_SENSOR_READ
+	default y
+	select SPI
+	select DISK_ACCESS
+	select FILE_SYSTEM
+	select FAT_FILESYSTEM_ELM

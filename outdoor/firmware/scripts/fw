@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+app_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+ncs_version="v3.4.1"
+ncs_dir="${NCS_DIR:-/opt/nordic/ncs/${ncs_version}}"
+build_dir="${app_dir}/build"
+board="env_sensor_outdoor/nrf54l15/cpuapp"
+
+run_ncs() {
+    nrfutil sdk-manager toolchain launch --ncs-version "${ncs_version}" \
+        --chdir "${ncs_dir}" -- "$@"
+}
+
+check_tools() {
+    command -v nrfutil >/dev/null || {
+        echo 'Install nRF Util first: https://www.nordicsemi.com/Products/Development-tools/nRF-Util' >&2
+        exit 1
+    }
+    [[ -f "${ncs_dir}/nrf/VERSION" ]] || {
+        echo "Missing SDK ${ncs_version}; run: $0 setup" >&2
+        exit 1
+    }
+}
+
+case "${1:-help}" in
+    setup)
+        command -v nrfutil >/dev/null
+        if [[ ! -f "${ncs_dir}/nrf/VERSION" ]]; then
+            nrfutil sdk-manager install "${ncs_version}"
+        fi
+        check_tools
+        run_ncs west --version
+        run_ncs arm-zephyr-eabi-gcc --version
+        ;;
+    doctor)
+        check_tools
+        nrfutil --version
+        nrfutil sdk-manager toolchain list
+        run_ncs west --version
+        run_ncs cmake --version
+        run_ncs arm-zephyr-eabi-gcc --version
+        nrfutil device list
+        ;;
+    build)
+        check_tools
+        run_ncs west build --no-sysbuild --pristine=auto --board "${board}" \
+            --build-dir "${build_dir}" "${app_dir}"
+        ;;
+    test)
+        "$0" build
+        run_ncs python "${app_dir}/tests/check_build.py" \
+            "${ncs_dir}" "${build_dir}"
+        run_ncs python "${app_dir}/tests/check_protocols.py"
+        run_ncs python "${app_dir}/tests/check_stcc4.py"
+        run_ncs python "${app_dir}/tests/check_future_drivers.py"
+        run_ncs python "${app_dir}/tests/check_gas_indices.py"
+        run_ncs python "${app_dir}/tests/check_telemetry.py"
+        run_ncs python "${app_dir}/tests/check_sd_log.py"
+        ;;
+    test-bmv080)
+        check_tools
+        if [[ -n "${2:-}" ]]; then
+            run_ncs python "${app_dir}/scripts/import_bmv080_sdk.py" "$2"
+        fi
+        sdk_config="${app_dir}/.local/bmv080_sdk.conf"
+        [[ -f "${sdk_config}" ]] || {
+            echo "Usage: $0 test-bmv080 /path/to/bmv080-sdk-v11-2-0.zip" >&2; exit 2;
+        }
+        sdk_build_dir="${app_dir}/.local/build_bmv080"
+        run_ncs west build --no-sysbuild --pristine=auto --board "${board}" \
+            --build-dir "${sdk_build_dir}" "${app_dir}" -- \
+            "-DEXTRA_CONF_FILE=${sdk_config}"
+        run_ncs python "${app_dir}/tests/check_build.py" "${ncs_dir}" "${sdk_build_dir}"
+        ;;
+    flash)
+        [[ -n "${2:-}" ]] || { echo "Usage: $0 flash JLINK_SERIAL" >&2; exit 2; }
+        "$0" test
+        nrfutil device device-info --serial-number "$2" --family nrf54l
+        mkdir -p "${app_dir}/.local"
+        backup="${app_dir}/.local/before_flash_$2_$(date -u +%Y%m%dT%H%M%SZ).hex"
+        nrfutil device read --serial-number "$2" --family nrf54l \
+            --address 0 --bytes 0x17D000 --to-file "${backup}"
+        echo "Previous application saved to ${backup}"
+        # Never recover or mass-erase automatically.
+        run_ncs west flash --build-dir "${build_dir}" --runner nrfutil --dev-id "$2"
+        ;;
+    rtt)
+        [[ -n "${2:-}" ]] || { echo "Usage: $0 rtt JLINK_SERIAL" >&2; exit 2; }
+        check_tools
+        [[ -f "${build_dir}/zephyr/zephyr.elf" ]] || {
+            echo 'Build the firmware first.' >&2; exit 1;
+        }
+        rtt_address="$(run_ncs arm-zephyr-eabi-nm "${build_dir}/zephyr/zephyr.elf" \
+            | awk '$3 == "_SEGGER_RTT" { print "0x" $1 }')"
+        [[ -n "${rtt_address}" ]] || { echo 'RTT symbol not found.' >&2; exit 1; }
+        logger="${JLINK_RTT_LOGGER:-/Applications/SEGGER/JLink/JLinkRTTLoggerExe}"
+        mkdir -p "${app_dir}/.local"
+        # RTT Logger refuses to overwrite an existing file on macOS.
+        if [[ -e "${app_dir}/.local/rtt.log" ]]; then
+            mv "${app_dir}/.local/rtt.log" \
+                "${app_dir}/.local/rtt_previous_$(date -u +%Y%m%dT%H%M%SZ)_$$.log"
+        fi
+        exec "${logger}" -Device nRF54L15_M33 -If SWD -Speed 1000 \
+            -USB "$2" -RTTAddress "${rtt_address}" -RTTChannel 0 \
+            "${app_dir}/.local/rtt.log"
+        ;;
+    *)
+        echo "Usage: $0 {setup|doctor|build|test|test-bmv080 [SDK_ZIP]|flash JLINK_SERIAL|rtt JLINK_SERIAL}"
+        ;;
+esac

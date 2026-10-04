@@ -1,0 +1,10 @@
+CONFIG_GPIO=y
+CONFIG_ARM_MPU=y
+CONFIG_HW_STACK_PROTECTION=y
+
+# P1.00 and P1.01 are GPIOs; there is no external 32.768 kHz crystal.
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y
+# Bring-up needs no radio timing or HFXO-based RC calibration.
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC_CALIBRATION=n
+# Use the system LFCLK so browser-synchronized time benefits from RC calibration.
+CONFIG_NRF_GRTC_TIMER_SOURCE_SYSTEM_LFCLK=y

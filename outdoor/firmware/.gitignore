@@ -1,0 +1,3 @@
+build/
+.local/
+__pycache__/

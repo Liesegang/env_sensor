@@ -1,0 +1,7 @@
+config APP_SFA40
+	bool "Read the SFA40 formaldehyde sensor"
+	depends on APP_SENSOR_READ
+	default n
+	help
+	  Enable after connecting the SFA40 at I2C address 0x5d.
+	  Reports HCHO, humidity, temperature, raw values and readiness status.

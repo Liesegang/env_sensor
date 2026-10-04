@@ -1,0 +1,5 @@
+target_include_directories(app PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_sources(app PRIVATE outdoor_clock.c)
+if(CONFIG_APP_SD_LOG)
+  target_sources(app PRIVATE sd_log.c sd_csv.c)
+endif()

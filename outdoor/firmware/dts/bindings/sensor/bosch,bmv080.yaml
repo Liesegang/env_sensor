@@ -1,0 +1,3 @@
+description: Bosch BMV080 particulate matter sensor, driven by the external Bosch SDK
+compatible: "bosch,bmv080"
+include: i2c-device.yaml

@@ -1,0 +1,7 @@
+config APP_AS3935
+	bool "Read the AS3935 lightning sensor"
+	depends on APP_SENSOR_READ
+	default n
+	help
+	  Enable after connecting the AS3935. Check the module's address straps.
+	  The current board has no MCU IRQ connection; reads poll the event register.
