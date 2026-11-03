@@ -1,0 +1,240 @@
+/dts-v1/;
+
+#include <nordic/nrf54l15_cpuapp.dtsi>
+#include <zephyr/dt-bindings/gpio/gpio.h>
+#include <zephyr/dt-bindings/i2c/i2c.h>
+#include <zephyr/dt-bindings/pinctrl/nrf-pinctrl.h>
+#include <zephyr/dt-bindings/regulator/nrf5x.h>
+#include <zephyr/dt-bindings/pwm/pwm.h>
+
+/ {
+	model = "Card environment sensor v2 (KAGA FEI ES4L15BA1)";
+	compatible = "liesegang,env-sensor-card";
+
+	chosen {
+		zephyr,sram = &cpuapp_sram;
+		zephyr,flash = &cpuapp_rram;
+		zephyr,flash-controller = &rram_controller;
+		zephyr,code-partition = &code_partition;
+		zephyr,settings-partition = &storage_partition;
+	};
+
+	aliases {
+		i2c-sensors = &i2c30;
+		buzzer = &buzzer;
+	};
+
+	buzzers {
+		compatible = "pwm-leds";
+		buzzer: buzzer {
+			/* UGCT7525: 2700 Hz resonance, square wave at 50% duty. */
+			pwms = <&pwm20 0 PWM_HZ(2700) PWM_POLARITY_NORMAL>;
+		};
+	};
+
+	zephyr,user {
+		/* P1.00 low turns on FET3 and supplies +V to BUZZ1. */
+		sensor-power-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
+		/* Keep the active-high buzzer transistor off. */
+		buzzer-drive-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+		/* Display shares SD SCK/MOSI and uses a separate chip select. */
+		display-cs-gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;
+		display-dc-gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+		display-reset-gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
+		display-busy-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
+		/* S1 wheel: contacts 1, 2 and T close to grounded C1/C2. */
+		sw1-gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
+		sw2-gpios = <&gpio2 2 GPIO_ACTIVE_LOW>;
+		swt-gpios = <&gpio2 5 GPIO_ACTIVE_LOW>;
+	};
+};
+
+&cpuapp_rram {
+	partitions {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		code_partition: partition@0 {
+			compatible = "zephyr,mapped-partition";
+			label = "card-app";
+			reg = <0x0 0x174000>;
+		};
+		/* Same 36 KiB storage range as the SDK nRF54L15 layout. */
+		storage_partition: partition@174000 {
+			compatible = "zephyr,mapped-partition";
+			label = "storage";
+			reg = <0x174000 0x9000>;
+		};
+	};
+};
+
+&cpuapp_sram {
+	status = "okay";
+};
+
+&clock {
+	status = "okay";
+};
+
+&grtc {
+	owned-channels = <0 1 2 3 4 5 6 7 8 9 10 11>;
+	child-owned-channels = <3 4 7 8 9 10 11>;
+	status = "okay";
+};
+
+&lfxo {
+	status = "disabled";
+};
+
+/* Match the same ES4L15BA1 module used by the working Outdoor BLE board. */
+&hfxo {
+	load-capacitors = "internal";
+	load-capacitance-femtofarad = <15000>;
+};
+
+&regulators {
+	status = "okay";
+};
+
+&vregmain {
+	status = "okay";
+	regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&gpio2 {
+	status = "okay";
+};
+
+&gpiote20 {
+	status = "okay";
+};
+
+&gpiote30 {
+	status = "okay";
+};
+
+&pinctrl {
+	buzzer_pwm_default: buzzer_pwm_default {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 1, 1)>;
+		};
+	};
+
+	buzzer_pwm_sleep: buzzer_pwm_sleep {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 1, 1)>;
+			low-power-enable;
+		};
+	};
+
+	i2c30_default: i2c30_default {
+		group1 {
+			/* R12/R13 are 5.1-kohm pull-ups to switched +V. */
+			psels = <NRF_PSEL(TWIM_SCL, 0, 3)>,
+				<NRF_PSEL(TWIM_SDA, 0, 4)>;
+		};
+	};
+
+	i2c30_sleep: i2c30_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SCL, 0, 3)>,
+				<NRF_PSEL(TWIM_SDA, 0, 4)>;
+			low-power-enable;
+		};
+	};
+
+	sd_spi_default: sd_spi_default {
+		group1 {
+			psels = <NRF_PSEL(SPIM_SCK, 1, 4)>,
+				<NRF_PSEL(SPIM_MOSI, 1, 6)>,
+				<NRF_PSEL(SPIM_MISO, 1, 2)>;
+		};
+	};
+
+	sd_spi_sleep: sd_spi_sleep {
+		group1 {
+			psels = <NRF_PSEL(SPIM_SCK, 1, 4)>,
+				<NRF_PSEL(SPIM_MOSI, 1, 6)>,
+				<NRF_PSEL(SPIM_MISO, 1, 2)>;
+			low-power-enable;
+		};
+	};
+};
+
+&i2c30 {
+	status = "okay";
+	clock-frequency = <I2C_BITRATE_STANDARD>;
+	pinctrl-0 = <&i2c30_default>;
+	pinctrl-1 = <&i2c30_sleep>;
+	pinctrl-names = "default", "sleep";
+
+	opt4001: light@45 {
+		compatible = "ti,opt4001";
+		reg = <0x45>;
+	};
+
+	sgp41: gas@59 {
+		compatible = "sensirion,sgp41";
+		reg = <0x59>;
+	};
+
+	sfa40: formaldehyde@5d {
+		compatible = "sensirion,sfa40";
+		reg = <0x5d>;
+	};
+
+	stcc4: co2@64 {
+		compatible = "sensirion,stcc4";
+		reg = <0x64>;
+		measurement-mode = <0>;
+	};
+
+	bme690: environment@76 {
+		compatible = "bosch,bme690";
+		reg = <0x76>;
+	};
+};
+
+&pwm20 {
+	status = "okay";
+	pinctrl-0 = <&buzzer_pwm_default>;
+	pinctrl-1 = <&buzzer_pwm_sleep>;
+	pinctrl-names = "default", "sleep";
+};
+
+&spi20 {
+	status = "okay";
+	pinctrl-0 = <&sd_spi_default>;
+	pinctrl-1 = <&sd_spi_sleep>;
+	pinctrl-names = "default", "sleep";
+	cs-gpios = <&gpio2 4 GPIO_ACTIVE_LOW>, <&gpio1 3 GPIO_ACTIVE_LOW>;
+
+	sd_slot: sd@0 {
+		compatible = "zephyr,sdhc-spi-slot";
+		reg = <0>;
+		spi-max-frequency = <4000000>;
+
+		sd_card: sd {
+			compatible = "zephyr,sdmmc-disk";
+			disk-name = "SD";
+		};
+	};
+
+	epd_display: display@1 {
+		compatible = "liesegang,epd3in6e";
+		reg = <1>;
+		spi-max-frequency = <4000000>;
+	};
+};
+
+&uicr {
+	/* P1.02 is SD MISO, P1.03 is display CS: release both NFC pads. */
+	nfct-pins-as-gpios;
+};

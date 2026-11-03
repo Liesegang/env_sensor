@@ -1,0 +1,5 @@
+# Local firmware build output
+.pio/
+.pio-core/
+.venv/
+__pycache__/

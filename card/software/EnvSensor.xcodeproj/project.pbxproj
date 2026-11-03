@@ -1,0 +1,800 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		039A9F92C11B79E5448436FF /* CardHistoryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D13E5CBCCAC2DCB30FB665A /* CardHistoryRecord.swift */; };
+		03B34E68B6003C0E9E42ACDE /* HistoryOverlayAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78AB2A1DF1D22661808288E /* HistoryOverlayAxis.swift */; };
+		04C21CE63DBFF16147F14641 /* DeviceCollectionToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB607D3209A4716AEC2FFCB /* DeviceCollectionToggleView.swift */; };
+		071A23AA0E4A9EF4B79B4965 /* CardImageWriteFence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21CA7C183FA7B135D58BA44 /* CardImageWriteFence.swift */; };
+		07C7101FA4DE40BC44128CF5 /* CardImagePlacementCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843813D18C9EF8735AABF9D7 /* CardImagePlacementCanvas.swift */; };
+		089DEEE80CD410E4EC506A6D /* SensorSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D013D0F134AF0EC59A50D80 /* SensorSchema.swift */; };
+		09010E720FD32B668473C892 /* SensorConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EF67B75D6EFD1D0CF70DC7 /* SensorConnectionState.swift */; };
+		098FF7375034C485D1919F94 /* HistoryRenderSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C54F78BB30234178405DC /* HistoryRenderSnapshot.swift */; };
+		0AFB514DB32DBCFE693A1215 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E460A3983BD406A6E8C33DF0 /* RootTabView.swift */; };
+		0BC868A96E6527357C74AA4A /* CardImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B658FAD534C747BF6FF09 /* CardImageProtocol.swift */; };
+		0C04FEFBF5A6E352B4F00EB4 /* ReadingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8609B2005F635AF08A50E57B /* ReadingRow.swift */; };
+		0C24DB7C4DEDB97EF2470D87 /* SensorMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8454BEB9A5A7839E8E0B26 /* SensorMetric.swift */; };
+		0DBC696524C17C52943214D5 /* HistoryPlotMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC17CFE91625474EBB317B9 /* HistoryPlotMode.swift */; };
+		0E2BB238DD3AC0E6A8A37F50 /* EnvSensorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3840CCF54A00DB2F289B11 /* EnvSensorProtocol.swift */; };
+		0EABE2D02A31A9212F108FB3 /* ExportFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE331433FFCAB0E79632C4CD /* ExportFormat.swift */; };
+		0F1A40B8B0E59500EB00AEDF /* CardImageAdjustmentControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0216B9E3DBCE489A47B4DB5 /* CardImageAdjustmentControls.swift */; };
+		0F57D11563BB05AF4CA157B9 /* HistoryTimeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510E1379A7630BB6E93A7DD0 /* HistoryTimeActionButton.swift */; };
+		0FA1EB075FFE441EFBA606A8 /* CardHistorySync.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF6750A5191E298595C0179 /* CardHistorySync.swift */; };
+		121A5F5FDE70A5E39540807E /* DiscoveryDeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1601CF0896069A9AE06A9106 /* DiscoveryDeviceRow.swift */; };
+		12B1F671A6806C724573F0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D99C813D7DCD6B5738FD138 /* Assets.xcassets */; };
+		1375EA4837574C2609FA6890 /* DemoReadings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28B098FD4E7531F6A897C2F /* DemoReadings.swift */; };
+		197FCB11A11AD8622943D19B /* HistoryChartInteractionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEC6F970C7A51FC943862A /* HistoryChartInteractionLayer.swift */; };
+		1F8311FBA69F822A9F1F699B /* HistoryQueryCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A1D35D46C9274A4366440 /* HistoryQueryCancellation.swift */; };
+		2024DF8AAD3760801C50D512 /* HistoryMetricSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B1E74CE60B9DD69B2F9A9 /* HistoryMetricSelectionView.swift */; };
+		20ABD325D3E02218C4477EDF /* CardImageStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FEA1414221F96D933BC2DF /* CardImageStatus.swift */; };
+		2203F26E69ECC760FCF1756C /* HistoryPlotModeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471C5AE9D1D9BC24975AE64 /* HistoryPlotModeSelector.swift */; };
+		252A259EB54B3D1FBE140703 /* GeneratedHistorySchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4AFEBC373E5C03C201CC7A /* GeneratedHistorySchema.swift */; };
+		285DA1BC6C5FA54A7114C4AB /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8118D1965835EBB190D37094 /* DiscoveryView.swift */; };
+		2ADAAD0CB98F6AD0125BDBDA /* CardImageTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5BA87707C26DBBBA4A81A /* CardImageTransfer.swift */; };
+		2D2C6563C31F5847DC636C46 /* HistoryRangePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42600A8A7F4702F518418C /* HistoryRangePreset.swift */; };
+		3206E467FDDA43AA6AE52221 /* CoreBluetoothCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87945B91390850EC5C5409D9 /* CoreBluetoothCollector.swift */; };
+		356224E1A63E94EC5FE87B2A /* HistorySelectionIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDB2C76630A622888598100 /* HistorySelectionIndex.swift */; };
+		375452721B48A32679E8133E /* CardImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB6C6F0ADE117091D25312 /* CardImageSource.swift */; };
+		3875B99C648734DFAA201C24 /* HistoryRenderSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207C822B7C3D3EE9C0219B6 /* HistoryRenderSample.swift */; };
+		38E7C52BB14DC3AA64913A2B /* DemoNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD671D7AC7616117A0F2FE9 /* DemoNoticeView.swift */; };
+		3BA2AE38CD5E28E7F0D05250 /* HistoryChartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23162B331A0EDB8FB6956E96 /* HistoryChartPoint.swift */; };
+		3DB866094BA92697CDF49EA4 /* ReadingTimeSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C7E56BA5D4DE4663C3039 /* ReadingTimeSummary.swift */; };
+		3E3BD467B1756F15288E1534 /* CardImageResultPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456F9419373D1BD63DECDB54 /* CardImageResultPreview.swift */; };
+		43B2743D84BC2C95C30A27BE /* HistoryViewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1514190C24934F0DB26F058C /* HistoryViewport.swift */; };
+		48C574FA5F4285ADAEFA575E /* CardImageAdjustmentSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88512633AD2A01F74546BF87 /* CardImageAdjustmentSlider.swift */; };
+		49ECF8F0FA438D4338E5FDDA /* HistoryAxisSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A55B747E128CF4B20832039 /* HistoryAxisSelectionView.swift */; };
+		4A460CC01803D327CE837662 /* CardImagePlacementEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB6012B3C72F92B260A157 /* CardImagePlacementEditor.swift */; };
+		4D53F71F9DAE59966D52EB4D /* CardHistoryStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9778CB92D8F215A2006CFF /* CardHistoryStatus.swift */; };
+		4DAF77B17D40B8E02D4B9C9E /* HistoryOverlayGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815D9A5CC3E42D5D1C279DB /* HistoryOverlayGraph.swift */; };
+		4F38CBE6C0A9E2058F80BF9A /* SensorPacketReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382E987A11B21CAC0CB25023 /* SensorPacketReceiver.swift */; };
+		51B66204503D16CC23DFF8E5 /* CardImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB561049ED91A2139DA953D /* CardImageConverter.swift */; };
+		569DB86D824F550D162EA1E9 /* HistoryTwoFingerGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE59D0ABDF52B8571870CA9 /* HistoryTwoFingerGesture.swift */; };
+		58F174C394713C617E7378E3 /* CardImageTransferPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE269B8C701E1625BD3E20F /* CardImageTransferPhase.swift */; };
+		5C702552AB3D5AE7FC2861F2 /* HistorySingleFingerGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE861AD8B0B2F4D5009ED7A /* HistorySingleFingerGesture.swift */; };
+		5C80C60051DEB5F751AD31EA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1462D635B831444E5A9F4EEC /* DashboardView.swift */; };
+		62FF5B916DFF464B4CD997EF /* CardHistoryResumePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D229BF03590C6019ACF5A95 /* CardHistoryResumePosition.swift */; };
+		64B4034BCB489917C0B3CF05 /* HistoryOverlayPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FA03570B4AFE5ED1398894 /* HistoryOverlayPlot.swift */; };
+		654459D09BFD41704A9B351E /* SensorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A3023AB2D0DA3B0A458F70 /* SensorStore.swift */; };
+		6709D0CE8EFEEF298120D4E3 /* HistoryChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE8B56442347FA3F71958C5 /* HistoryChartView.swift */; };
+		6768799D7563876AD1B9B2A4 /* CollectionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1704EEA68B027C8D8E6FD /* CollectionSummaryView.swift */; };
+		6A28E0A73959C5D9A84ADFC4 /* HistoryOverlayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5305CCD402AF3A2AC45FE20 /* HistoryOverlayHeader.swift */; };
+		7173571A4BF7231FA250CC54 /* HistoryRenderSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAC116A11178BC794ECD2F7 /* HistoryRenderSeries.swift */; };
+		71DCF1392409B8419DEF94D5 /* HistoryTimeControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8905C9C20D5252D62AD2186 /* HistoryTimeControls.swift */; };
+		735E3D4DBF247545352574CE /* CardHistoryCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF75B7699DF88D7B69AC7DB /* CardHistoryCursor.swift */; };
+		78BD5C25D7B946C99FC686B1 /* HistoryOverlaySeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E314251360350C7446631 /* HistoryOverlaySeries.swift */; };
+		795AB97267F36B4710F03384 /* CardDeviceClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75652C816FBD7A87EB71A17E /* CardDeviceClock.swift */; };
+		7962E014B2B96C19F7C5692B /* BluetoothFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9A9CF57078D1D3AA13291 /* BluetoothFailure.swift */; };
+		7BAAF8BCE5304AD8D06EB441 /* CardImageCropGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2559002FCE87777F80232F99 /* CardImageCropGrid.swift */; };
+		8760FC7411F626477B561702 /* HistoryPlotTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB90C78095940F5275FC20 /* HistoryPlotTransform.swift */; };
+		88CF587B42CF7B6DA7E03FE8 /* DeviceHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DCE5136F5B43DB0972CCD /* DeviceHistoryView.swift */; };
+		8B5AE6D5DEEFA395FB8FB858 /* CardHistoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693CF6A0B4DFD8D88F17C854 /* CardHistoryProtocol.swift */; };
+		8B8D2E2400727E1970C09AEC /* GeneratedClockSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFFE97AC10ACD69C30C1D14 /* GeneratedClockSchema.swift */; };
+		8DAB85BFCA280673DA249336 /* CardImagePreviewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305C2900D854D7B11A597E1 /* CardImagePreviewMode.swift */; };
+		916DD7207DD55F2E791DDCF8 /* SensorClockSyncState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA56B842445C4A0ECC3AE9B /* SensorClockSyncState.swift */; };
+		92A99183420F3F45E05C0B19 /* CardImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02335D0DA88CC4AB11934C1F /* CardImageError.swift */; };
+		94BF05547968808FA0706077 /* CollectionToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E25D465EF117F7C700AC6 /* CollectionToggleView.swift */; };
+		970DA72071C85375E27C3535 /* CardImageAdjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156FA8DAB7B714DBBFF8ED3 /* CardImageAdjustments.swift */; };
+		99281EF3FA24DD1E196B94DD /* HistoryViewerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5F9EC09839B40A9569ABF8 /* HistoryViewerSheet.swift */; };
+		9CFBCE4E7209A8CE1081DD62 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C071AC2C58F2EAB96553BB /* SettingsView.swift */; };
+		9FAFBF6C84A6A22514C8CB21 /* HistoryDataSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B743A516AEED1CF35FE59 /* HistoryDataSnapshot.swift */; };
+		A547204B7ABBC8DEBF6D46F3 /* HistoryOverlayChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9D6F9EC35FD9D74B79919 /* HistoryOverlayChartView.swift */; };
+		A6A783C55BDEE3A3654441E1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 92199BE0259B17C29FA967A0 /* libsqlite3.tbd */; };
+		A707108B1FD019637C3E87FC /* BluetoothAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8294697CBA7B92C1D20FBBA /* BluetoothAvailability.swift */; };
+		A77FFEC70BB30B6BEA9E1267 /* CardImageUploadQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B4086C2B3ABE13C41D32 /* CardImageUploadQueue.swift */; };
+		B3FD80D2D1A395C7A2B79F57 /* DiscoveredSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDD7BA7F12426976C5496E7 /* DiscoveredSensor.swift */; };
+		B95DD7B2DB824043148AAB88 /* HistoryRenderPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDDA1ADB95AFFB1B45D79E8 /* HistoryRenderPoint.swift */; };
+		B97EE3DC70D2D262EB8F4482 /* HistorySeparatePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FA71776253E19F6C4B4BA /* HistorySeparatePlot.swift */; };
+		BAC65EBB482477B3BDE7C9F5 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8429E6274F5052A30A50AD3 /* AppTab.swift */; };
+		BCBBDA2366F636C78084016C /* MetricTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8DFAAEDC55425AE8A96DC8 /* MetricTileView.swift */; };
+		BF60F1178EF29FCC6D56BD4F /* CardImageCommitBoundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE8C753CB8896A3B1D8D8BA /* CardImageCommitBoundary.swift */; };
+		BF9CF76E486A44C58C44FDBB /* HistoryValueScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF25DB49886E284D6A94F28 /* HistoryValueScale.swift */; };
+		C5C80553314363E76EE3697B /* HistoryTimeRangeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F427F4C17191008DF0454C30 /* HistoryTimeRangeSheet.swift */; };
+		C65A5090DBEBAB29F7D6BA57 /* ImageUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C6BF09DD0E56068B7CD1A /* ImageUploadView.swift */; };
+		C6F967783DEE02A31440D14F /* CardImageEditorPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227E161B6C15AA1C4F2CB8F3 /* CardImageEditorPreview.swift */; };
+		CBD89EA4C8735823BC2F08BE /* SensorAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F738FEF5EEB48FEC87618B /* SensorAppModel.swift */; };
+		CD352C1378F293361F6D97CC /* HistorySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A5B97B735F5531B0C9158 /* HistorySelection.swift */; };
+		CD71F4A4065DE90F6341FAFE /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6688E0C03FD540E799F7B6 /* HistoryView.swift */; };
+		D01B0B8C2453896DB0B2DFBB /* HistoryValueCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979EC5417E6E9D3F4FD77DF7 /* HistoryValueCards.swift */; };
+		D588199CB39057BB0D7BEB59 /* HistoryExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667C23CBAFB850E2BD7AE89 /* HistoryExportView.swift */; };
+		D8114304AAAD72014A2FC237 /* HistoryTwoFingerRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86AACD05A4D754D03037EA1 /* HistoryTwoFingerRecognizer.swift */; };
+		DE438C3749FF37AEE8A524DD /* HistoryOverlayLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D443DB7D92642184545B /* HistoryOverlayLegend.swift */; };
+		E15A71F0A213387C43A441C3 /* SensorReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC49199A223D0B265A7E50 /* SensorReading.swift */; };
+		E2A7DACEEBC5D530025B291B /* PreparedCardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC5082820D27D617A33D452 /* PreparedCardImage.swift */; };
+		E69F1CBBA9B0A872F7315B92 /* HistoryDisplayedRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B1A9302F0C9E635E86BA0A /* HistoryDisplayedRangeView.swift */; };
+		EEA0C8A5C2EC7D5854C85F62 /* CardImageCropMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B7F67E7441196E31867FB /* CardImageCropMask.swift */; };
+		EF887697EC5D7AF5AEA95207 /* HistoryMetricScaleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26054BF8B064523F43EE3AF3 /* HistoryMetricScaleStyle.swift */; };
+		F45FF2856BF8A687FB9E55C9 /* EnvSensorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8026A40696D261E52BABA3 /* EnvSensorApp.swift */; };
+		F4BC3A0BE53819FAD4B8E20D /* DeviceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621D360B19B92E7C837088 /* DeviceCardView.swift */; };
+		FD44B7FB6FDF801777900AF2 /* HistoryOverlayAxesLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF326CC8FA9FE4551568363 /* HistoryOverlayAxesLayer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0156FA8DAB7B714DBBFF8ED3 /* CardImageAdjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageAdjustments.swift; sourceTree = "<group>"; };
+		02335D0DA88CC4AB11934C1F /* CardImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageError.swift; sourceTree = "<group>"; };
+		034C54F78BB30234178405DC /* HistoryRenderSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRenderSnapshot.swift; sourceTree = "<group>"; };
+		042E25D465EF117F7C700AC6 /* CollectionToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionToggleView.swift; sourceTree = "<group>"; };
+		0CE44FFFAA416F99F8F21395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		12AEC6F970C7A51FC943862A /* HistoryChartInteractionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryChartInteractionLayer.swift; sourceTree = "<group>"; };
+		1462D635B831444E5A9F4EEC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		1514190C24934F0DB26F058C /* HistoryViewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewport.swift; sourceTree = "<group>"; };
+		1601CF0896069A9AE06A9106 /* DiscoveryDeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDeviceRow.swift; sourceTree = "<group>"; };
+		1815D9A5CC3E42D5D1C279DB /* HistoryOverlayGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOverlayGraph.swift; sourceTree = "<group>"; };
+		1AF75B7699DF88D7B69AC7DB /* CardHistoryCursor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistoryCursor.swift; sourceTree = "<group>"; };
+		1DB607D3209A4716AEC2FFCB /* DeviceCollectionToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCollectionToggleView.swift; sourceTree = "<group>"; };
+		1EDB2C76630A622888598100 /* HistorySelectionIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySelectionIndex.swift; sourceTree = "<group>"; };
+		20FC49199A223D0B265A7E50 /* SensorReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorReading.swift; sourceTree = "<group>"; };
+		227E161B6C15AA1C4F2CB8F3 /* CardImageEditorPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageEditorPreview.swift; sourceTree = "<group>"; };
+		2305C2900D854D7B11A597E1 /* CardImagePreviewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImagePreviewMode.swift; sourceTree = "<group>"; };
+		23162B331A0EDB8FB6956E96 /* HistoryChartPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryChartPoint.swift; sourceTree = "<group>"; };
+		2559002FCE87777F80232F99 /* CardImageCropGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageCropGrid.swift; sourceTree = "<group>"; };
+		255B658FAD534C747BF6FF09 /* CardImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageProtocol.swift; sourceTree = "<group>"; };
+		26054BF8B064523F43EE3AF3 /* HistoryMetricScaleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMetricScaleStyle.swift; sourceTree = "<group>"; };
+		269E314251360350C7446631 /* HistoryOverlaySeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOverlaySeries.swift; sourceTree = "<group>"; };
+		2A8454BEB9A5A7839E8E0B26 /* SensorMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorMetric.swift; sourceTree = "<group>"; };
+		3471C5AE9D1D9BC24975AE64 /* HistoryPlotModeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPlotModeSelector.swift; sourceTree = "<group>"; };
+		36AB6012B3C72F92B260A157 /* CardImagePlacementEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImagePlacementEditor.swift; sourceTree = "<group>"; };
+		382E987A11B21CAC0CB25023 /* SensorPacketReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorPacketReceiver.swift; sourceTree = "<group>"; };
+		3EC17CFE91625474EBB317B9 /* HistoryPlotMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPlotMode.swift; sourceTree = "<group>"; };
+		456F9419373D1BD63DECDB54 /* CardImageResultPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageResultPreview.swift; sourceTree = "<group>"; };
+		4667C23CBAFB850E2BD7AE89 /* HistoryExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExportView.swift; sourceTree = "<group>"; };
+		49E3D443DB7D92642184545B /* HistoryOverlayLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOverlayLegend.swift; sourceTree = "<group>"; };
+		4CF5BA87707C26DBBBA4A81A /* CardImageTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageTransfer.swift; sourceTree = "<group>"; };
+		4D013D0F134AF0EC59A50D80 /* SensorSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorSchema.swift; sourceTree = "<group>"; };
+		4EE269B8C701E1625BD3E20F /* CardImageTransferPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageTransferPhase.swift; sourceTree = "<group>"; };
+		502DCE5136F5B43DB0972CCD /* DeviceHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHistoryView.swift; sourceTree = "<group>"; };
+		510E1379A7630BB6E93A7DD0 /* HistoryTimeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTimeActionButton.swift; sourceTree = "<group>"; };
+		51F738FEF5EEB48FEC87618B /* SensorAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorAppModel.swift; sourceTree = "<group>"; };
+		58FEA1414221F96D933BC2DF /* CardImageStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageStatus.swift; sourceTree = "<group>"; };
+		5A6688E0C03FD540E799F7B6 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		5AD671D7AC7616117A0F2FE9 /* DemoNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNoticeView.swift; sourceTree = "<group>"; };
+		5B42600A8A7F4702F518418C /* HistoryRangePreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRangePreset.swift; sourceTree = "<group>"; };
+		5CA56B842445C4A0ECC3AE9B /* SensorClockSyncState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorClockSyncState.swift; sourceTree = "<group>"; };
+		5D13E5CBCCAC2DCB30FB665A /* CardHistoryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistoryRecord.swift; sourceTree = "<group>"; };
+		5D229BF03590C6019ACF5A95 /* CardHistoryResumePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistoryResumePosition.swift; sourceTree = "<group>"; };
+		5E1C6BF09DD0E56068B7CD1A /* ImageUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadView.swift; sourceTree = "<group>"; };
+		5FE8B56442347FA3F71958C5 /* HistoryChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryChartView.swift; sourceTree = "<group>"; };
+		636A1D35D46C9274A4366440 /* HistoryQueryCancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQueryCancellation.swift; sourceTree = "<group>"; };
+		66A3023AB2D0DA3B0A458F70 /* SensorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorStore.swift; sourceTree = "<group>"; };
+		693CF6A0B4DFD8D88F17C854 /* CardHistoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistoryProtocol.swift; sourceTree = "<group>"; };
+		6C8026A40696D261E52BABA3 /* EnvSensorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvSensorApp.swift; sourceTree = "<group>"; };
+		6CC5082820D27D617A33D452 /* PreparedCardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparedCardImage.swift; sourceTree = "<group>"; };
+		6CF326CC8FA9FE4551568363 /* HistoryOverlayAxesLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOverlayAxesLayer.swift; sourceTree = "<group>"; };
+		6D1FA71776253E19F6C4B4BA /* HistorySeparatePlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySeparatePlot.swift; sourceTree = "<group>"; };
+		6D99C813D7DCD6B5738FD138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75652C816FBD7A87EB71A17E /* CardDeviceClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeviceClock.swift; sourceTree = "<group>"; };
+		7A4AFEBC373E5C03C201CC7A /* GeneratedHistorySchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedHistorySchema.swift; sourceTree = "<group>"; };
+		7F9BC28E56270FAF971F5C17 /* EnvSensor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EnvSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8118D1965835EBB190D37094 /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
+		843813D18C9EF8735AABF9D7 /* CardImagePlacementCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImagePlacementCanvas.swift; sourceTree = "<group>"; };
+		84621D360B19B92E7C837088 /* DeviceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCardView.swift; sourceTree = "<group>"; };
+		851C7E56BA5D4DE4663C3039 /* ReadingTimeSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTimeSummary.swift; sourceTree = "<group>"; };
+		8609B2005F635AF08A50E57B /* ReadingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingRow.swift; sourceTree = "<group>"; };
+		87945B91390850EC5C5409D9 /* CoreBluetoothCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothCollector.swift; sourceTree = "<group>"; };
+		88512633AD2A01F74546BF87 /* CardImageAdjustmentSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageAdjustmentSlider.swift; sourceTree = "<group>"; };
+		88D3B4086C2B3ABE13C41D32 /* CardImageUploadQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageUploadQueue.swift; sourceTree = "<group>"; };
+		91BB6C6F0ADE117091D25312 /* CardImageSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageSource.swift; sourceTree = "<group>"; };
+		92199BE0259B17C29FA967A0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		979EC5417E6E9D3F4FD77DF7 /* HistoryValueCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryValueCards.swift; sourceTree = "<group>"; };
+		9A55B747E128CF4B20832039 /* HistoryAxisSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAxisSelectionView.swift; sourceTree = "<group>"; };
+		9D5F9EC09839B40A9569ABF8 /* HistoryViewerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewerSheet.swift; sourceTree = "<group>"; };
+		A7EF67B75D6EFD1D0CF70DC7 /* SensorConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorConnectionState.swift; sourceTree = "<group>"; };
+		A8294697CBA7B92C1D20FBBA /* BluetoothAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothAvailability.swift; sourceTree = "<group>"; };
+		A8429E6274F5052A30A50AD3 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		AA3840CCF54A00DB2F289B11 /* EnvSensorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvSensorProtocol.swift; sourceTree = "<group>"; };
+		ABDDA1ADB95AFFB1B45D79E8 /* HistoryRenderPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRenderPoint.swift; sourceTree = "<group>"; };
+		ADAC116A11178BC794ECD2F7 /* HistoryRenderSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRenderSeries.swift; sourceTree = "<group>"; };
+		AE331433FFCAB0E79632C4CD /* ExportFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFormat.swift; sourceTree = "<group>"; };
+		AEFFE97AC10ACD69C30C1D14 /* GeneratedClockSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedClockSchema.swift; sourceTree = "<group>"; };
+		AF1B7F67E7441196E31867FB /* CardImageCropMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageCropMask.swift; sourceTree = "<group>"; };
+		B86AACD05A4D754D03037EA1 /* HistoryTwoFingerRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTwoFingerRecognizer.swift; sourceTree = "<group>"; };
+		BAF25DB49886E284D6A94F28 /* HistoryValueScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryValueScale.swift; sourceTree = "<group>"; };
+		BCE9D6F9EC35FD9D74B79919 /* HistoryOverlayChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOverlayChartView.swift; sourceTree = "<group>"; };
+		C207C822B7C3D3EE9C0219B6 /* HistoryRenderSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRenderSample.swift; sourceTree = "<group>"; };
+		C6B1A9302F0C9E635E86BA0A /* HistoryDisplayedRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDisplayedRangeView.swift; sourceTree = "<group>"; };
+		CF9778CB92D8F215A2006CFF /* CardHistoryStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistoryStatus.swift; sourceTree = "<group>"; };
+		D21CA7C183FA7B135D58BA44 /* CardImageWriteFence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageWriteFence.swift; sourceTree = "<group>"; };
+		D5305CCD402AF3A2AC45FE20 /* HistoryOverlayHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOverlayHeader.swift; sourceTree = "<group>"; };
+		DEC9A9CF57078D1D3AA13291 /* BluetoothFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothFailure.swift; sourceTree = "<group>"; };
+		E0216B9E3DBCE489A47B4DB5 /* CardImageAdjustmentControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageAdjustmentControls.swift; sourceTree = "<group>"; };
+		E28B098FD4E7531F6A897C2F /* DemoReadings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoReadings.swift; sourceTree = "<group>"; };
+		E32A5B97B735F5531B0C9158 /* HistorySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySelection.swift; sourceTree = "<group>"; };
+		E3D1704EEA68B027C8D8E6FD /* CollectionSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSummaryView.swift; sourceTree = "<group>"; };
+		E460A3983BD406A6E8C33DF0 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		E6C071AC2C58F2EAB96553BB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E78AB2A1DF1D22661808288E /* HistoryOverlayAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOverlayAxis.swift; sourceTree = "<group>"; };
+		E8905C9C20D5252D62AD2186 /* HistoryTimeControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTimeControls.swift; sourceTree = "<group>"; };
+		EBB561049ED91A2139DA953D /* CardImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageConverter.swift; sourceTree = "<group>"; };
+		ECE861AD8B0B2F4D5009ED7A /* HistorySingleFingerGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySingleFingerGesture.swift; sourceTree = "<group>"; };
+		EFDD7BA7F12426976C5496E7 /* DiscoveredSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredSensor.swift; sourceTree = "<group>"; };
+		F427F4C17191008DF0454C30 /* HistoryTimeRangeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTimeRangeSheet.swift; sourceTree = "<group>"; };
+		F4FB90C78095940F5275FC20 /* HistoryPlotTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPlotTransform.swift; sourceTree = "<group>"; };
+		F7FA03570B4AFE5ED1398894 /* HistoryOverlayPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOverlayPlot.swift; sourceTree = "<group>"; };
+		FBE59D0ABDF52B8571870CA9 /* HistoryTwoFingerGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTwoFingerGesture.swift; sourceTree = "<group>"; };
+		FC3B1E74CE60B9DD69B2F9A9 /* HistoryMetricSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMetricSelectionView.swift; sourceTree = "<group>"; };
+		FC7B743A516AEED1CF35FE59 /* HistoryDataSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataSnapshot.swift; sourceTree = "<group>"; };
+		FE8DFAAEDC55425AE8A96DC8 /* MetricTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricTileView.swift; sourceTree = "<group>"; };
+		FEE8C753CB8896A3B1D8D8BA /* CardImageCommitBoundary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageCommitBoundary.swift; sourceTree = "<group>"; };
+		FEF6750A5191E298595C0179 /* CardHistorySync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHistorySync.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBB98D85FD15A9A759ED8406 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6A783C55BDEE3A3654441E1 /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3385BF7FAAAB661F3E4D4BE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8429E6274F5052A30A50AD3 /* AppTab.swift */,
+				E0216B9E3DBCE489A47B4DB5 /* CardImageAdjustmentControls.swift */,
+				88512633AD2A01F74546BF87 /* CardImageAdjustmentSlider.swift */,
+				2559002FCE87777F80232F99 /* CardImageCropGrid.swift */,
+				AF1B7F67E7441196E31867FB /* CardImageCropMask.swift */,
+				227E161B6C15AA1C4F2CB8F3 /* CardImageEditorPreview.swift */,
+				843813D18C9EF8735AABF9D7 /* CardImagePlacementCanvas.swift */,
+				36AB6012B3C72F92B260A157 /* CardImagePlacementEditor.swift */,
+				456F9419373D1BD63DECDB54 /* CardImageResultPreview.swift */,
+				E3D1704EEA68B027C8D8E6FD /* CollectionSummaryView.swift */,
+				042E25D465EF117F7C700AC6 /* CollectionToggleView.swift */,
+				1462D635B831444E5A9F4EEC /* DashboardView.swift */,
+				5AD671D7AC7616117A0F2FE9 /* DemoNoticeView.swift */,
+				84621D360B19B92E7C837088 /* DeviceCardView.swift */,
+				1DB607D3209A4716AEC2FFCB /* DeviceCollectionToggleView.swift */,
+				502DCE5136F5B43DB0972CCD /* DeviceHistoryView.swift */,
+				1601CF0896069A9AE06A9106 /* DiscoveryDeviceRow.swift */,
+				8118D1965835EBB190D37094 /* DiscoveryView.swift */,
+				9A55B747E128CF4B20832039 /* HistoryAxisSelectionView.swift */,
+				12AEC6F970C7A51FC943862A /* HistoryChartInteractionLayer.swift */,
+				23162B331A0EDB8FB6956E96 /* HistoryChartPoint.swift */,
+				5FE8B56442347FA3F71958C5 /* HistoryChartView.swift */,
+				C6B1A9302F0C9E635E86BA0A /* HistoryDisplayedRangeView.swift */,
+				4667C23CBAFB850E2BD7AE89 /* HistoryExportView.swift */,
+				26054BF8B064523F43EE3AF3 /* HistoryMetricScaleStyle.swift */,
+				FC3B1E74CE60B9DD69B2F9A9 /* HistoryMetricSelectionView.swift */,
+				6CF326CC8FA9FE4551568363 /* HistoryOverlayAxesLayer.swift */,
+				E78AB2A1DF1D22661808288E /* HistoryOverlayAxis.swift */,
+				BCE9D6F9EC35FD9D74B79919 /* HistoryOverlayChartView.swift */,
+				1815D9A5CC3E42D5D1C279DB /* HistoryOverlayGraph.swift */,
+				D5305CCD402AF3A2AC45FE20 /* HistoryOverlayHeader.swift */,
+				49E3D443DB7D92642184545B /* HistoryOverlayLegend.swift */,
+				F7FA03570B4AFE5ED1398894 /* HistoryOverlayPlot.swift */,
+				269E314251360350C7446631 /* HistoryOverlaySeries.swift */,
+				3EC17CFE91625474EBB317B9 /* HistoryPlotMode.swift */,
+				3471C5AE9D1D9BC24975AE64 /* HistoryPlotModeSelector.swift */,
+				F4FB90C78095940F5275FC20 /* HistoryPlotTransform.swift */,
+				034C54F78BB30234178405DC /* HistoryRenderSnapshot.swift */,
+				6D1FA71776253E19F6C4B4BA /* HistorySeparatePlot.swift */,
+				ECE861AD8B0B2F4D5009ED7A /* HistorySingleFingerGesture.swift */,
+				510E1379A7630BB6E93A7DD0 /* HistoryTimeActionButton.swift */,
+				E8905C9C20D5252D62AD2186 /* HistoryTimeControls.swift */,
+				F427F4C17191008DF0454C30 /* HistoryTimeRangeSheet.swift */,
+				FBE59D0ABDF52B8571870CA9 /* HistoryTwoFingerGesture.swift */,
+				B86AACD05A4D754D03037EA1 /* HistoryTwoFingerRecognizer.swift */,
+				979EC5417E6E9D3F4FD77DF7 /* HistoryValueCards.swift */,
+				5A6688E0C03FD540E799F7B6 /* HistoryView.swift */,
+				9D5F9EC09839B40A9569ABF8 /* HistoryViewerSheet.swift */,
+				5E1C6BF09DD0E56068B7CD1A /* ImageUploadView.swift */,
+				FE8DFAAEDC55425AE8A96DC8 /* MetricTileView.swift */,
+				8609B2005F635AF08A50E57B /* ReadingRow.swift */,
+				E460A3983BD406A6E8C33DF0 /* RootTabView.swift */,
+				E6C071AC2C58F2EAB96553BB /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		442AD4DB081A01C3D669502A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E28B098FD4E7531F6A897C2F /* DemoReadings.swift */,
+				6C8026A40696D261E52BABA3 /* EnvSensorApp.swift */,
+				AE331433FFCAB0E79632C4CD /* ExportFormat.swift */,
+				51F738FEF5EEB48FEC87618B /* SensorAppModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		52CFFB897EA92B5A28B8B931 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				A8294697CBA7B92C1D20FBBA /* BluetoothAvailability.swift */,
+				DEC9A9CF57078D1D3AA13291 /* BluetoothFailure.swift */,
+				FEF6750A5191E298595C0179 /* CardHistorySync.swift */,
+				FEE8C753CB8896A3B1D8D8BA /* CardImageCommitBoundary.swift */,
+				4CF5BA87707C26DBBBA4A81A /* CardImageTransfer.swift */,
+				4EE269B8C701E1625BD3E20F /* CardImageTransferPhase.swift */,
+				88D3B4086C2B3ABE13C41D32 /* CardImageUploadQueue.swift */,
+				D21CA7C183FA7B135D58BA44 /* CardImageWriteFence.swift */,
+				87945B91390850EC5C5409D9 /* CoreBluetoothCollector.swift */,
+				EFDD7BA7F12426976C5496E7 /* DiscoveredSensor.swift */,
+				5CA56B842445C4A0ECC3AE9B /* SensorClockSyncState.swift */,
+				A7EF67B75D6EFD1D0CF70DC7 /* SensorConnectionState.swift */,
+				382E987A11B21CAC0CB25023 /* SensorPacketReceiver.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		562F23C36BB5D241E20A9458 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				636A1D35D46C9274A4366440 /* HistoryQueryCancellation.swift */,
+				66A3023AB2D0DA3B0A458F70 /* SensorStore.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		5F37E3B0468C3B02C23F2C3D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EBB561049ED91A2139DA953D /* CardImageConverter.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		6C54CF24B0C581AFB163712B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F9BC28E56270FAF971F5C17 /* EnvSensor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74D66345808E404F2599ACED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75652C816FBD7A87EB71A17E /* CardDeviceClock.swift */,
+				1AF75B7699DF88D7B69AC7DB /* CardHistoryCursor.swift */,
+				5D13E5CBCCAC2DCB30FB665A /* CardHistoryRecord.swift */,
+				5D229BF03590C6019ACF5A95 /* CardHistoryResumePosition.swift */,
+				CF9778CB92D8F215A2006CFF /* CardHistoryStatus.swift */,
+				0156FA8DAB7B714DBBFF8ED3 /* CardImageAdjustments.swift */,
+				02335D0DA88CC4AB11934C1F /* CardImageError.swift */,
+				2305C2900D854D7B11A597E1 /* CardImagePreviewMode.swift */,
+				91BB6C6F0ADE117091D25312 /* CardImageSource.swift */,
+				58FEA1414221F96D933BC2DF /* CardImageStatus.swift */,
+				FC7B743A516AEED1CF35FE59 /* HistoryDataSnapshot.swift */,
+				5B42600A8A7F4702F518418C /* HistoryRangePreset.swift */,
+				ABDDA1ADB95AFFB1B45D79E8 /* HistoryRenderPoint.swift */,
+				C207C822B7C3D3EE9C0219B6 /* HistoryRenderSample.swift */,
+				ADAC116A11178BC794ECD2F7 /* HistoryRenderSeries.swift */,
+				E32A5B97B735F5531B0C9158 /* HistorySelection.swift */,
+				1EDB2C76630A622888598100 /* HistorySelectionIndex.swift */,
+				BAF25DB49886E284D6A94F28 /* HistoryValueScale.swift */,
+				1514190C24934F0DB26F058C /* HistoryViewport.swift */,
+				6CC5082820D27D617A33D452 /* PreparedCardImage.swift */,
+				851C7E56BA5D4DE4663C3039 /* ReadingTimeSummary.swift */,
+				2A8454BEB9A5A7839E8E0B26 /* SensorMetric.swift */,
+				20FC49199A223D0B265A7E50 /* SensorReading.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A2D8A44B25095EEFC44CF00E = {
+			isa = PBXGroup;
+			children = (
+				CDCF53DEB8E88D299BC443EF /* EnvSensor */,
+				FD579AB255E33C3B0D091CB4 /* Frameworks */,
+				6C54CF24B0C581AFB163712B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CAD1524D5E393024705879A8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				693CF6A0B4DFD8D88F17C854 /* CardHistoryProtocol.swift */,
+				255B658FAD534C747BF6FF09 /* CardImageProtocol.swift */,
+				AA3840CCF54A00DB2F289B11 /* EnvSensorProtocol.swift */,
+				AEFFE97AC10ACD69C30C1D14 /* GeneratedClockSchema.swift */,
+				7A4AFEBC373E5C03C201CC7A /* GeneratedHistorySchema.swift */,
+				4D013D0F134AF0EC59A50D80 /* SensorSchema.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CDCF53DEB8E88D299BC443EF /* EnvSensor */ = {
+			isa = PBXGroup;
+			children = (
+				6D99C813D7DCD6B5738FD138 /* Assets.xcassets */,
+				0CE44FFFAA416F99F8F21395 /* Info.plist */,
+				442AD4DB081A01C3D669502A /* App */,
+				52CFFB897EA92B5A28B8B931 /* Bluetooth */,
+				5F37E3B0468C3B02C23F2C3D /* Images */,
+				74D66345808E404F2599ACED /* Models */,
+				CAD1524D5E393024705879A8 /* Protocol */,
+				562F23C36BB5D241E20A9458 /* Storage */,
+				3385BF7FAAAB661F3E4D4BE0 /* Views */,
+			);
+			path = EnvSensor;
+			sourceTree = "<group>";
+		};
+		FD579AB255E33C3B0D091CB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92199BE0259B17C29FA967A0 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F83261DB8880193D5C6F96B /* EnvSensor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5CCA208B637F6872FA60310 /* Build configuration list for PBXNativeTarget "EnvSensor" */;
+			buildPhases = (
+				033ECE67C94DB0C8E0BD072B /* Sources */,
+				0F35B39250DE26ED0EA3C94E /* Resources */,
+				EBB98D85FD15A9A759ED8406 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EnvSensor;
+			packageProductDependencies = (
+			);
+			productName = EnvSensor;
+			productReference = 7F9BC28E56270FAF971F5C17 /* EnvSensor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEF6ABA89D7BDCF7254EB795 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					9F83261DB8880193D5C6F96B = {
+						DevelopmentTeam = T348C8J368;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 28BE86519634F37E9D78CBA4 /* Build configuration list for PBXProject "EnvSensor" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A2D8A44B25095EEFC44CF00E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6C54CF24B0C581AFB163712B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F83261DB8880193D5C6F96B /* EnvSensor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F35B39250DE26ED0EA3C94E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B1F671A6806C724573F0E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		033ECE67C94DB0C8E0BD072B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC65EBB482477B3BDE7C9F5 /* AppTab.swift in Sources */,
+				A707108B1FD019637C3E87FC /* BluetoothAvailability.swift in Sources */,
+				7962E014B2B96C19F7C5692B /* BluetoothFailure.swift in Sources */,
+				795AB97267F36B4710F03384 /* CardDeviceClock.swift in Sources */,
+				735E3D4DBF247545352574CE /* CardHistoryCursor.swift in Sources */,
+				8B5AE6D5DEEFA395FB8FB858 /* CardHistoryProtocol.swift in Sources */,
+				039A9F92C11B79E5448436FF /* CardHistoryRecord.swift in Sources */,
+				62FF5B916DFF464B4CD997EF /* CardHistoryResumePosition.swift in Sources */,
+				4D53F71F9DAE59966D52EB4D /* CardHistoryStatus.swift in Sources */,
+				0FA1EB075FFE441EFBA606A8 /* CardHistorySync.swift in Sources */,
+				0F1A40B8B0E59500EB00AEDF /* CardImageAdjustmentControls.swift in Sources */,
+				48C574FA5F4285ADAEFA575E /* CardImageAdjustmentSlider.swift in Sources */,
+				970DA72071C85375E27C3535 /* CardImageAdjustments.swift in Sources */,
+				BF60F1178EF29FCC6D56BD4F /* CardImageCommitBoundary.swift in Sources */,
+				51B66204503D16CC23DFF8E5 /* CardImageConverter.swift in Sources */,
+				7BAAF8BCE5304AD8D06EB441 /* CardImageCropGrid.swift in Sources */,
+				EEA0C8A5C2EC7D5854C85F62 /* CardImageCropMask.swift in Sources */,
+				C6F967783DEE02A31440D14F /* CardImageEditorPreview.swift in Sources */,
+				92A99183420F3F45E05C0B19 /* CardImageError.swift in Sources */,
+				07C7101FA4DE40BC44128CF5 /* CardImagePlacementCanvas.swift in Sources */,
+				4A460CC01803D327CE837662 /* CardImagePlacementEditor.swift in Sources */,
+				8DAB85BFCA280673DA249336 /* CardImagePreviewMode.swift in Sources */,
+				0BC868A96E6527357C74AA4A /* CardImageProtocol.swift in Sources */,
+				3E3BD467B1756F15288E1534 /* CardImageResultPreview.swift in Sources */,
+				375452721B48A32679E8133E /* CardImageSource.swift in Sources */,
+				20ABD325D3E02218C4477EDF /* CardImageStatus.swift in Sources */,
+				2ADAAD0CB98F6AD0125BDBDA /* CardImageTransfer.swift in Sources */,
+				58F174C394713C617E7378E3 /* CardImageTransferPhase.swift in Sources */,
+				A77FFEC70BB30B6BEA9E1267 /* CardImageUploadQueue.swift in Sources */,
+				071A23AA0E4A9EF4B79B4965 /* CardImageWriteFence.swift in Sources */,
+				6768799D7563876AD1B9B2A4 /* CollectionSummaryView.swift in Sources */,
+				94BF05547968808FA0706077 /* CollectionToggleView.swift in Sources */,
+				3206E467FDDA43AA6AE52221 /* CoreBluetoothCollector.swift in Sources */,
+				5C80C60051DEB5F751AD31EA /* DashboardView.swift in Sources */,
+				38E7C52BB14DC3AA64913A2B /* DemoNoticeView.swift in Sources */,
+				1375EA4837574C2609FA6890 /* DemoReadings.swift in Sources */,
+				F4BC3A0BE53819FAD4B8E20D /* DeviceCardView.swift in Sources */,
+				04C21CE63DBFF16147F14641 /* DeviceCollectionToggleView.swift in Sources */,
+				88CF587B42CF7B6DA7E03FE8 /* DeviceHistoryView.swift in Sources */,
+				B3FD80D2D1A395C7A2B79F57 /* DiscoveredSensor.swift in Sources */,
+				121A5F5FDE70A5E39540807E /* DiscoveryDeviceRow.swift in Sources */,
+				285DA1BC6C5FA54A7114C4AB /* DiscoveryView.swift in Sources */,
+				F45FF2856BF8A687FB9E55C9 /* EnvSensorApp.swift in Sources */,
+				0E2BB238DD3AC0E6A8A37F50 /* EnvSensorProtocol.swift in Sources */,
+				0EABE2D02A31A9212F108FB3 /* ExportFormat.swift in Sources */,
+				8B8D2E2400727E1970C09AEC /* GeneratedClockSchema.swift in Sources */,
+				252A259EB54B3D1FBE140703 /* GeneratedHistorySchema.swift in Sources */,
+				49ECF8F0FA438D4338E5FDDA /* HistoryAxisSelectionView.swift in Sources */,
+				197FCB11A11AD8622943D19B /* HistoryChartInteractionLayer.swift in Sources */,
+				3BA2AE38CD5E28E7F0D05250 /* HistoryChartPoint.swift in Sources */,
+				6709D0CE8EFEEF298120D4E3 /* HistoryChartView.swift in Sources */,
+				9FAFBF6C84A6A22514C8CB21 /* HistoryDataSnapshot.swift in Sources */,
+				E69F1CBBA9B0A872F7315B92 /* HistoryDisplayedRangeView.swift in Sources */,
+				D588199CB39057BB0D7BEB59 /* HistoryExportView.swift in Sources */,
+				EF887697EC5D7AF5AEA95207 /* HistoryMetricScaleStyle.swift in Sources */,
+				2024DF8AAD3760801C50D512 /* HistoryMetricSelectionView.swift in Sources */,
+				FD44B7FB6FDF801777900AF2 /* HistoryOverlayAxesLayer.swift in Sources */,
+				03B34E68B6003C0E9E42ACDE /* HistoryOverlayAxis.swift in Sources */,
+				A547204B7ABBC8DEBF6D46F3 /* HistoryOverlayChartView.swift in Sources */,
+				4DAF77B17D40B8E02D4B9C9E /* HistoryOverlayGraph.swift in Sources */,
+				6A28E0A73959C5D9A84ADFC4 /* HistoryOverlayHeader.swift in Sources */,
+				DE438C3749FF37AEE8A524DD /* HistoryOverlayLegend.swift in Sources */,
+				64B4034BCB489917C0B3CF05 /* HistoryOverlayPlot.swift in Sources */,
+				78BD5C25D7B946C99FC686B1 /* HistoryOverlaySeries.swift in Sources */,
+				0DBC696524C17C52943214D5 /* HistoryPlotMode.swift in Sources */,
+				2203F26E69ECC760FCF1756C /* HistoryPlotModeSelector.swift in Sources */,
+				8760FC7411F626477B561702 /* HistoryPlotTransform.swift in Sources */,
+				1F8311FBA69F822A9F1F699B /* HistoryQueryCancellation.swift in Sources */,
+				2D2C6563C31F5847DC636C46 /* HistoryRangePreset.swift in Sources */,
+				B95DD7B2DB824043148AAB88 /* HistoryRenderPoint.swift in Sources */,
+				3875B99C648734DFAA201C24 /* HistoryRenderSample.swift in Sources */,
+				7173571A4BF7231FA250CC54 /* HistoryRenderSeries.swift in Sources */,
+				098FF7375034C485D1919F94 /* HistoryRenderSnapshot.swift in Sources */,
+				CD352C1378F293361F6D97CC /* HistorySelection.swift in Sources */,
+				356224E1A63E94EC5FE87B2A /* HistorySelectionIndex.swift in Sources */,
+				B97EE3DC70D2D262EB8F4482 /* HistorySeparatePlot.swift in Sources */,
+				5C702552AB3D5AE7FC2861F2 /* HistorySingleFingerGesture.swift in Sources */,
+				0F57D11563BB05AF4CA157B9 /* HistoryTimeActionButton.swift in Sources */,
+				71DCF1392409B8419DEF94D5 /* HistoryTimeControls.swift in Sources */,
+				C5C80553314363E76EE3697B /* HistoryTimeRangeSheet.swift in Sources */,
+				569DB86D824F550D162EA1E9 /* HistoryTwoFingerGesture.swift in Sources */,
+				D8114304AAAD72014A2FC237 /* HistoryTwoFingerRecognizer.swift in Sources */,
+				D01B0B8C2453896DB0B2DFBB /* HistoryValueCards.swift in Sources */,
+				BF9CF76E486A44C58C44FDBB /* HistoryValueScale.swift in Sources */,
+				CD71F4A4065DE90F6341FAFE /* HistoryView.swift in Sources */,
+				99281EF3FA24DD1E196B94DD /* HistoryViewerSheet.swift in Sources */,
+				43B2743D84BC2C95C30A27BE /* HistoryViewport.swift in Sources */,
+				C65A5090DBEBAB29F7D6BA57 /* ImageUploadView.swift in Sources */,
+				BCBBDA2366F636C78084016C /* MetricTileView.swift in Sources */,
+				E2A7DACEEBC5D530025B291B /* PreparedCardImage.swift in Sources */,
+				0C04FEFBF5A6E352B4F00EB4 /* ReadingRow.swift in Sources */,
+				3DB866094BA92697CDF49EA4 /* ReadingTimeSummary.swift in Sources */,
+				0AFB514DB32DBCFE693A1215 /* RootTabView.swift in Sources */,
+				CBD89EA4C8735823BC2F08BE /* SensorAppModel.swift in Sources */,
+				916DD7207DD55F2E791DDCF8 /* SensorClockSyncState.swift in Sources */,
+				09010E720FD32B668473C892 /* SensorConnectionState.swift in Sources */,
+				0C24DB7C4DEDB97EF2470D87 /* SensorMetric.swift in Sources */,
+				4F38CBE6C0A9E2058F80BF9A /* SensorPacketReceiver.swift in Sources */,
+				E15A71F0A213387C43A441C3 /* SensorReading.swift in Sources */,
+				089DEEE80CD410E4EC506A6D /* SensorSchema.swift in Sources */,
+				654459D09BFD41704A9B351E /* SensorStore.swift in Sources */,
+				9CFBCE4E7209A8CE1081DD62 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6656374FAE4137EE79879DA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T348C8J368;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = EnvSensor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.liesegang.envsensor;
+				PRODUCT_NAME = EnvSensor;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70E848527BED3BC8571B825D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+			};
+			name = Release;
+		};
+		C4E13274E0DF4D883B9C9FF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T348C8J368;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = EnvSensor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.liesegang.envsensor;
+				PRODUCT_NAME = EnvSensor;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D306DA179AF38DAE8E1DE272 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28BE86519634F37E9D78CBA4 /* Build configuration list for PBXProject "EnvSensor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D306DA179AF38DAE8E1DE272 /* Debug */,
+				70E848527BED3BC8571B825D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A5CCA208B637F6872FA60310 /* Build configuration list for PBXNativeTarget "EnvSensor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4E13274E0DF4D883B9C9FF2 /* Debug */,
+				6656374FAE4137EE79879DA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEF6ABA89D7BDCF7254EB795 /* Project object */;
+}

@@ -1,0 +1,370 @@
+{
+  "name": "env-history-v1",
+  "version": 1,
+  "integerEncoding": "little-endian",
+  "serviceUuid": "722acda0-e77f-468d-a916-67e599e7cffd",
+  "controlUuid": "722acda1-e77f-468d-a916-67e599e7cffd",
+  "statusUuid": "722acda2-e77f-468d-a916-67e599e7cffd",
+  "dataUuid": "722acda3-e77f-468d-a916-67e599e7cffd",
+  "maxRecords": 6,
+  "maxPageSize": 440,
+  "operations": {
+    "pull": 1,
+    "ack": 2,
+    "cancel": 3
+  },
+  "states": {
+    "idle": 0,
+    "preparing": 1,
+    "ready": 2,
+    "complete": 3,
+    "error": 4
+  },
+  "flags": {
+    "more": 1,
+    "gap": 2
+  },
+  "validity": {
+    "temperature": 1,
+    "humidity": 2,
+    "pressure": 4,
+    "co2": 8,
+    "lux": 16,
+    "bme_temperature": 32,
+    "bme_humidity": 64,
+    "bme_gas": 128,
+    "voc_raw": 256,
+    "nox_raw": 512,
+    "voc_index": 1024,
+    "nox_index": 2048,
+    "hcho": 4096
+  },
+  "rhtSources": {
+    "none": 0,
+    "sht4x": 1,
+    "bme69x": 2
+  },
+  "utcRange": {
+    "minimum": 1577836800,
+    "maximum": 4102444799
+  },
+  "formats": {
+    "control": {
+      "magic": "HC",
+      "size": 20,
+      "fields": [
+        {
+          "name": "version",
+          "type": "u8",
+          "offset": 2
+        },
+        {
+          "name": "opcode",
+          "type": "u8",
+          "offset": 3
+        },
+        {
+          "name": "request_id",
+          "type": "u32",
+          "offset": 4
+        },
+        {
+          "name": "cursor_boot_id",
+          "type": "u64",
+          "offset": 8
+        },
+        {
+          "name": "cursor_sequence",
+          "type": "u32",
+          "offset": 16
+        }
+      ]
+    },
+    "page": {
+      "magic": "HP",
+      "size": 32,
+      "fields": [
+        {
+          "name": "version",
+          "type": "u8",
+          "offset": 2
+        },
+        {
+          "name": "flags",
+          "type": "u8",
+          "offset": 3
+        },
+        {
+          "name": "request_id",
+          "type": "u32",
+          "offset": 4
+        },
+        {
+          "name": "boot_id",
+          "type": "u64",
+          "offset": 8
+        },
+        {
+          "name": "first_sequence",
+          "type": "u32",
+          "offset": 16
+        },
+        {
+          "name": "record_count",
+          "type": "u16",
+          "offset": 20
+        },
+        {
+          "name": "record_size",
+          "type": "u16",
+          "offset": 22
+        },
+        {
+          "name": "crc32",
+          "type": "u32",
+          "offset": 24
+        },
+        {
+          "name": "clock_revision",
+          "type": "u32",
+          "offset": 28
+        }
+      ]
+    },
+    "record": {
+      "size": 68,
+      "fields": [
+        {
+          "name": "sequence",
+          "type": "u32",
+          "offset": 0
+        },
+        {
+          "name": "uptime_s",
+          "type": "u32",
+          "offset": 4
+        },
+        {
+          "name": "unix_s",
+          "type": "u64",
+          "offset": 8
+        },
+        {
+          "name": "temperature_mc",
+          "type": "i32",
+          "offset": 16
+        },
+        {
+          "name": "humidity_mpercent",
+          "type": "u32",
+          "offset": 20
+        },
+        {
+          "name": "hcho_millippb",
+          "type": "i32",
+          "offset": 24
+        },
+        {
+          "name": "bme_temperature_mc",
+          "type": "i32",
+          "offset": 28
+        },
+        {
+          "name": "bme_humidity_mpercent",
+          "type": "u32",
+          "offset": 32
+        },
+        {
+          "name": "pressure_pa",
+          "type": "u32",
+          "offset": 36
+        },
+        {
+          "name": "gas_resistance_ohm",
+          "type": "u32",
+          "offset": 40
+        },
+        {
+          "name": "millilux",
+          "type": "u32",
+          "offset": 44
+        },
+        {
+          "name": "co2_ppm",
+          "type": "i16",
+          "offset": 48
+        },
+        {
+          "name": "raw_voc",
+          "type": "u16",
+          "offset": 50
+        },
+        {
+          "name": "raw_nox",
+          "type": "u16",
+          "offset": 52
+        },
+        {
+          "name": "voc_index",
+          "type": "u16",
+          "offset": 54
+        },
+        {
+          "name": "nox_index",
+          "type": "u16",
+          "offset": 56
+        },
+        {
+          "name": "stcc_status",
+          "type": "u16",
+          "offset": 58
+        },
+        {
+          "name": "stcc_self_test",
+          "type": "u16",
+          "offset": 60
+        },
+        {
+          "name": "valid",
+          "type": "u16",
+          "offset": 62
+        },
+        {
+          "name": "rht_source",
+          "type": "u8",
+          "offset": 64
+        },
+        {
+          "name": "gas_valid",
+          "type": "u8",
+          "offset": 65
+        },
+        {
+          "name": "heater_stable",
+          "type": "u8",
+          "offset": 66
+        },
+        {
+          "name": "reserved",
+          "type": "u8",
+          "offset": 67
+        }
+      ]
+    },
+    "status": {
+      "magic": "HS",
+      "size": 72,
+      "fields": [
+        {
+          "name": "version",
+          "type": "u8",
+          "offset": 2
+        },
+        {
+          "name": "state",
+          "type": "u8",
+          "offset": 3
+        },
+        {
+          "name": "request_id",
+          "type": "u32",
+          "offset": 4
+        },
+        {
+          "name": "earliest_boot_id",
+          "type": "u64",
+          "offset": 8
+        },
+        {
+          "name": "earliest_sequence",
+          "type": "u32",
+          "offset": 16
+        },
+        {
+          "name": "latest_boot_id",
+          "type": "u64",
+          "offset": 20
+        },
+        {
+          "name": "latest_sequence",
+          "type": "u32",
+          "offset": 28
+        },
+        {
+          "name": "flags",
+          "type": "u32",
+          "offset": 32
+        },
+        {
+          "name": "page_record_count",
+          "type": "u16",
+          "offset": 36
+        },
+        {
+          "name": "page_size",
+          "type": "u16",
+          "offset": 38
+        },
+        {
+          "name": "page_last_sequence",
+          "type": "u32",
+          "offset": 40
+        },
+        {
+          "name": "error",
+          "type": "i32",
+          "offset": 44
+        },
+        {
+          "name": "current_boot_id",
+          "type": "u64",
+          "offset": 48
+        },
+        {
+          "name": "clock_revision",
+          "type": "u32",
+          "offset": 56
+        },
+        {
+          "name": "utc_anchor_s",
+          "type": "u64",
+          "offset": 60
+        },
+        {
+          "name": "uptime_anchor_s",
+          "type": "u32",
+          "offset": 68
+        }
+      ]
+    },
+    "hint": {
+      "magic": "HN",
+      "size": 8,
+      "fields": [
+        {
+          "name": "version",
+          "type": "u8",
+          "offset": 2
+        },
+        {
+          "name": "state",
+          "type": "u8",
+          "offset": 3
+        },
+        {
+          "name": "request_id",
+          "type": "u32",
+          "offset": 4
+        }
+      ]
+    }
+  },
+  "canonicalization": {
+    "invalidFields": "zero",
+    "reserved": "zero",
+    "sourceWhenNoValidTemperatureOrHumidity": "none",
+    "diagnostics": "preserve",
+    "identity": "deviceId + bootId + sequence",
+    "mutableField": "unix_s only, with same-boot clock anchor"
+  }
+}

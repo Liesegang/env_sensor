@@ -127,7 +127,7 @@
 
 	as3935: lightning@3 {
 		compatible = "ams,as3935";
-		/* Verify the future module's address straps; valid addresses are 1..3. */
+		/* Connected module ACKs at 0x03; IRQ is not wired to the MCU. */
 		reg = <0x03>;
 	};
 

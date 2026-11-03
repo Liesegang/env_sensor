@@ -1,0 +1,1173 @@
+{
+  "status": "PASS",
+  "case_body_mm": 7.65,
+  "case_local_max_mm": 9.75,
+  "case_xy_mm": [
+    91.0,
+    60.4
+  ],
+  "modeled_board_reference_count": 93,
+  "checked_shell_pairs": 279,
+  "worst_case_low_head_to_panel_gap_mm": 0.1,
+  "header_assumption": "CON3 is represented as exposed pads until population confirmed",
+  "snap_tongue_lengths_mm": [
+    11.4,
+    11.4,
+    11.5,
+    11.0
+  ],
+  "through_hole_pad_keepout_count": 12,
+  "IC5_resin_min_distance_mm": {
+    "Front": 1.5,
+    "Rear": 1.525
+  },
+  "outside_nut_wells": [
+    {
+      "index": 1,
+      "seat_thickness_mm": 1.0,
+      "nominal_thread_engagement_mm": 2.4,
+      "outside_recess_mm": 0.4,
+      "outside_path_overlap_mm3": 0.0,
+      "boss_radius_mm": 4.1,
+      "minimum_hex_corner_wall_mm": 0.8091
+    },
+    {
+      "index": 2,
+      "seat_thickness_mm": 1.0,
+      "nominal_thread_engagement_mm": 2.4,
+      "outside_recess_mm": 0.4,
+      "outside_path_overlap_mm3": 0.0,
+      "boss_radius_mm": 4.1,
+      "minimum_hex_corner_wall_mm": 0.8091
+    },
+    {
+      "index": 3,
+      "seat_thickness_mm": 1.0,
+      "nominal_thread_engagement_mm": 2.4,
+      "outside_recess_mm": 0.4,
+      "outside_path_overlap_mm3": 0.0,
+      "boss_radius_mm": 4.1,
+      "minimum_hex_corner_wall_mm": 0.8091
+    }
+  ],
+  "results": [
+    {
+      "pair": "Front/Rear",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/PCB",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/EPD",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/EPDMaxThickness",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Battery",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/BatteryFixingPad",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/BatteryWire",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/BatteryWireKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/PanelFrontTape",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/PanelRetentionPads",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Screw1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/ScrewHeadMax1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Nut1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/NutOutsideAccess1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Screw2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/ScrewHeadMax2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Nut2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/NutOutsideAccess2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Screw3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/ScrewHeadMax3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Nut3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/NutOutsideAccess3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/LED1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/IC5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/J1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/IC6",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/IC7",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/SW1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R14",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C12",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/CON3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/S1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/IC11",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/SD1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/CN1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C22",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/IC12",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/CON4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C6",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C11",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C14",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C15",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C16",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C17",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C18",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C20",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C21",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C23",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C24",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C25",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C27",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C28",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/FET1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/L1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/D2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C29",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/D3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/D4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R16",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C30",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C31",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C32",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R15",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/FET2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C33",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C34",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/D5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/L2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R7",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R8",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R11",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R17",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C35",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C36",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C37",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R18",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C38",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C39",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C40",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C41",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/U1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/L3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/L5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C42",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C43",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C45",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R19",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C46",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C47",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C48",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C49",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C50",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R12",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R13",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C51",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/L4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/FET3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R20",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R21",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C52",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/BUZZ1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/D6",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/TR1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/C4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/R3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/D1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/IC2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/SolderLegKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_IC5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_J1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_SD1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/SDCardEjected",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_CN1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Mated_CN1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_CON4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_BUZZ1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_IC6",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_IC7",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_IC11",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_IC12",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_IC2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_C35",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_L1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_L2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/Envelope_U1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/S1Operation",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/IC5ResinKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/USBPlugAccess",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/SW1Operation",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/FPCBondKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/FPC",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Front/FPCKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/PCB",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/EPD",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/EPDMaxThickness",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Battery",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/BatteryFixingPad",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/BatteryWire",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/BatteryWireKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/PanelFrontTape",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/PanelRetentionPads",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Screw1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/ScrewHeadMax1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Nut1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/NutOutsideAccess1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Screw2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/ScrewHeadMax2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Nut2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/NutOutsideAccess2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Screw3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/ScrewHeadMax3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Nut3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/NutOutsideAccess3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/LED1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/IC5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/J1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/IC6",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/IC7",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/SW1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R14",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C12",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/CON3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/S1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/IC11",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/SD1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/CN1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C22",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/IC12",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/CON4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C6",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C11",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C14",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C15",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C16",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C17",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C18",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C20",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C21",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C23",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C24",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C25",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C27",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C28",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/FET1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/L1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/D2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C29",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/D3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/D4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R16",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C30",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C31",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C32",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R15",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/FET2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C33",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C34",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/D5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/L2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R7",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R8",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R11",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R17",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C35",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C36",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C37",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R18",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C38",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C39",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C40",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C41",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/U1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/L3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/L5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C42",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C43",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C45",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R19",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C46",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C47",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C48",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C49",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C50",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R12",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R13",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C51",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/L4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/FET3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R20",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R21",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C52",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/BUZZ1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/D6",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/TR1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/C4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/R3",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/D1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/IC2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/SolderLegKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_IC5",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_J1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_SD1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/SDCardEjected",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_CN1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Mated_CN1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_CON4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_BUZZ1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_IC6",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_IC7",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_IC11",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_IC12",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_IC2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_C35",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_L1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_L2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/Envelope_U1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/S1Operation",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/IC5ResinKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/USBPlugAccess",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/SW1Operation",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/FPCBondKeepout",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/FPC",
+      "overlap_mm3": 0.0
+    },
+    {
+      "pair": "Rear/FPCKeepout",
+      "overlap_mm3": 0.0
+    }
+  ],
+  "S1_PCB_overlap_mm3": 0.0,
+  "failures": []
+}

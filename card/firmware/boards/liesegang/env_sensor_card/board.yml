@@ -1,0 +1,6 @@
+board:
+  name: env_sensor_card
+  full_name: Card environment sensor v2 (ES4L15BA1)
+  vendor: liesegang
+  socs:
+    - name: nrf54l15

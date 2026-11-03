@@ -1,0 +1,420 @@
+{
+  "schema_version": 1,
+  "units": "mm",
+  "coordinate_system": "Local EAGLE package coordinates before element rotation; z=0 is mounted PCB top surface; component bodies extend toward +z. PCB is z=-1.6..0. Bounding boxes include body dimensional tolerance and 0.10mm solder stand-off where applicable, but do not include case clearance.",
+  "pcb_thickness": 1.6,
+  "through_hole_pin_protrusion_below_pcb": 0.5,
+  "excluded_refs": {
+    "IC1": "SFA40 not fitted on current hardware, per card/hardware/readme.md"
+  },
+  "components": [
+    {
+      "ref": "IC5",
+      "part": "KAGA FEI ES4L15BA1",
+      "package": "ES4L15BA1",
+      "placement": {
+        "x": 38.85,
+        "y": -6.907,
+        "rotation": "R0"
+      },
+      "bbox": {
+        "x0": -4.375,
+        "x1": 4.375,
+        "y0": -1.725,
+        "y1": 1.725,
+        "z0": 0,
+        "z1": 1.1
+      },
+      "source": [
+        "docs/datasheets/ES4L15BA1_DataSheet_V1_0_20260624E.pdf pp.4,23",
+        "v2 EAGLE ES4L15BA1 footprint"
+      ],
+      "confidence": "high",
+      "notes": "Outline 8.55×3.25mm, general XY tolerance ±0.2mm, maximum total height 1.00mm. Bbox uses maximal overall size 8.75×3.45 and adds 0.10mm solder height. Module centered at footprint origin. Antenna portion is at local +X, x=0.875..4.275 nominal."
+    },
+    {
+      "ref": "J1",
+      "part": "Hirose FH34SRJ-50S-0.5SH(50)",
+      "package": "CONN50X1_FH34SRJ-50S-0.5SH(50)",
+      "placement": {
+        "x": -31.75,
+        "y": 0.0,
+        "rotation": "R270"
+      },
+      "bbox": {
+        "x0": -13.75,
+        "x1": 13.75,
+        "y0": -2.05,
+        "y1": 2.05,
+        "z0": 0,
+        "z1": 1.1
+      },
+      "source": [
+        "https://www.hirose.com/product/p/CL0580-1266-2-50",
+        "v2 EAGLE CONN50X1_FH34SRJ-50S-0.5SH(50) body lines layer 51"
+      ],
+      "confidence": "high",
+      "notes": "Manufacturer nominal length 27.0mm, width 3.8mm, height 1.0mm. Embedded footprint body is 27.1526×3.81mm; conservative bbox covers both. Closed actuator only; FPC fold has separate keepout.",
+      "access_direction_local": [
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "ref": "SD1",
+      "part": "Hirose DM3AT-SF-PEJM5 family",
+      "package": "DM3AT",
+      "placement": {
+        "x": 3.406,
+        "y": 16.326,
+        "rotation": "R90"
+      },
+      "bbox": {
+        "x0": -4.85,
+        "x1": 11.6,
+        "y0": -2.1,
+        "y1": 11.95,
+        "z0": 0,
+        "z1": 1.83
+      },
+      "source": [
+        "https://www.hirose.com/product/document?clcode=CL0609-0033-6-00&documentid=D49662_en&documenttype=Catalog&lang=en&productname=DM3AT-SF-PEJ2M5&series=DM3",
+        "v2 EAGLE DM3AT footprint body lines layer 21"
+      ],
+      "confidence": "medium",
+      "notes": "Catalog body 15.95×13.85×1.68mm. XY bbox follows actual footprint body rectangle plus ~0.1mm. Bbox z includes 0.05mm assumed tolerance and 0.10mm solder. Exact suffix not in PCB PARTS. Insertion is toward local -X, card projects from local +X.",
+      "access_direction_local": [
+        1,
+        0,
+        0
+      ],
+      "card_locked_projection": 1.6,
+      "card_ejected_projection": 5.6,
+      "card_locked_bbox": {
+        "x0": 0.0,
+        "x1": 13.2,
+        "y0": -0.5,
+        "y1": 10.5,
+        "z0": 0.1,
+        "z1": 1.83
+      }
+    },
+    {
+      "ref": "CN1",
+      "part": "JST PH 2 pin side-entry header inferred as S2B-PH-K-S",
+      "package": "PH2_2",
+      "placement": {
+        "x": 12.23,
+        "y": 18.34,
+        "rotation": "R180"
+      },
+      "bbox": {
+        "x0": -3.05,
+        "x1": 3.05,
+        "y0": -1.7,
+        "y1": 6.35,
+        "z0": 0,
+        "z1": 4.9
+      },
+      "source": [
+        "https://www.jst-mfg.com/product/pdf/jpn/PH.pdf pp.1,3",
+        "v2 EAGLE PH2_2 footprint"
+      ],
+      "confidence": "medium",
+      "notes": "Exact part is unspecified in PARTS. 5.9mm wide footprint and side-entry housing Y=-1.6..6.25 match JST PH side entry. Manufacturer nominal housing height 4.8mm, depth7.6mm. Bbox includes small uncertainty. Mated PHR-2 plug is also needed; nominal assembly depth9.6mm.",
+      "access_direction_local": [
+        0,
+        1,
+        0
+      ],
+      "mated_bbox": {
+        "x0": -3.05,
+        "x1": 3.05,
+        "y0": -1.7,
+        "y1": 8.4,
+        "z0": 0,
+        "z1": 4.9
+      },
+      "lead_note": "Trimmed through-hole posts may reach z=-2.1 per user. Do not model entire bbox through PCB."
+    },
+    {
+      "ref": "CON4",
+      "part": "CUI / Same Sky UJC-HP-3-SMT-TR inferred from repo drawing",
+      "package": "USB-C-P",
+      "placement": {
+        "x": 35.625,
+        "y": 26.425,
+        "rotation": "R180"
+      },
+      "bbox": {
+        "x0": -4.67,
+        "x1": 4.67,
+        "y0": -2.8,
+        "y1": 4.9,
+        "z0": 0,
+        "z1": 3.36
+      },
+      "source": [
+        "docs/datasheets/ujc-hp-3-smt-tr.pdf p.2",
+        "v2 EAGLE USB-C-P footprint"
+      ],
+      "confidence": "medium",
+      "notes": "Exact PCB PARTS is absent. Repo USB-C drawing has matching 8.64mm mounting-post pitch and 3.8mm spacing. Nominal shell 8.94×6.9×3.16mm. Bounding box uses outline/footprint +0.20mm tolerance. Drawing PCB assumption0.8mm differs from actual1.6mm; clipped post length should follow user0.5mm protrusion. Opening at local -Y.",
+      "access_direction_local": [
+        0,
+        -1,
+        0
+      ],
+      "lead_note": "Trimmed shield posts may reach z=-2.1. Header body bbox excludes posts below PCB."
+    },
+    {
+      "ref": "BUZZ1",
+      "part": "UNIVERSAL UGCT7525AN4",
+      "package": "UGCT7525",
+      "placement": {
+        "x": -28.8,
+        "y": 21.0,
+        "rotation": "R180"
+      },
+      "bbox": {
+        "x0": -3.85,
+        "x1": 3.85,
+        "y0": -3.85,
+        "y1": 3.85,
+        "z0": 0,
+        "z1": 2.8
+      },
+      "source": [
+        "https://akizukidenshi.com/goodsaffix/UGCT7525AN4.pdf",
+        "card/firmware/README.md",
+        "v2 EAGLE UGCT7525 footprint"
+      ],
+      "confidence": "high",
+      "notes": "Manufacturer body7.5±0.2×7.5±0.2×2.5±0.2mm. Height includes0.10mm solder. Side sound port near local +X as footprint arrow indicates; after R180 it points toward board -X.",
+      "sound_port_direction_local": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "ref": "IC6",
+      "part": "Sensirion SGP41-D-R4 (PARTS SPG41 typo)",
+      "package": "SON80P244X244X95-7N",
+      "placement": {
+        "x": 21.0,
+        "y": -9.0,
+        "rotation": "R0"
+      },
+      "bbox": {
+        "x0": -1.27,
+        "x1": 1.27,
+        "y0": -1.27,
+        "y1": 1.27,
+        "z0": 0,
+        "z1": 1.05
+      },
+      "source": [
+        "docs/datasheets/Sensirion_Gas_Sensors_Datasheet_SGP41.pdf p.18",
+        "card/hardware/readme.md"
+      ],
+      "confidence": "high",
+      "notes": "Actual SGP41 supersedes SGP40 symbolic value. Package2.44±0.1 square, height0.85±0.1mm plus0.10mm solder. Top gas opening must remain unobstructed.",
+      "requires_ventilation": true
+    },
+    {
+      "ref": "IC7",
+      "part": "Sensirion SHT45 (SHT4x-Axx)",
+      "package": "SHT40BD1BR2",
+      "placement": {
+        "x": 16.3,
+        "y": 2.1,
+        "rotation": "R270"
+      },
+      "bbox": {
+        "x0": -0.8,
+        "x1": 0.8,
+        "y0": -0.8,
+        "y1": 0.8,
+        "z0": 0,
+        "z1": 0.69
+      },
+      "source": [
+        "docs/datasheets/HT_DS_Datasheet_SHT4x_5.pdf p.15",
+        "card/hardware/readme.md"
+      ],
+      "confidence": "high",
+      "notes": "Bare SHT4x package1.5±0.1mm square, height0.54±0.05mm plus0.10mm solder. Uses actual SHT45, no filter membrane specified. Top opening must remain unobstructed.",
+      "requires_ventilation": true
+    },
+    {
+      "ref": "IC11",
+      "part": "Bosch BME690",
+      "package": "BME688",
+      "placement": {
+        "x": 21.0,
+        "y": -3.0,
+        "rotation": "R0"
+      },
+      "bbox": {
+        "x0": -1.55,
+        "x1": 1.55,
+        "y0": -1.55,
+        "y1": 1.55,
+        "z0": 0,
+        "z1": 1.1
+      },
+      "source": [
+        "docs/datasheets/BME690_datasheet.pdf p.53",
+        "card/hardware/readme.md"
+      ],
+      "confidence": "high",
+      "notes": "Actual BME690 supersedes BME688 symbolic value. Drawing3.00mm square, height0.95±0.05mm. Conservative XY±0.05mm; height adds0.10mm solder. Top vent must be unobstructed.",
+      "requires_ventilation": true
+    },
+    {
+      "ref": "IC12",
+      "part": "Sensirion STCC4-D-R3",
+      "package": "STCC4DR3",
+      "placement": {
+        "x": 21.0,
+        "y": 3.0,
+        "rotation": "R0"
+      },
+      "bbox": {
+        "x0": -1.575,
+        "x1": 1.575,
+        "y0": -2.075,
+        "y1": 2.075,
+        "z0": 0,
+        "z1": 1.42
+      },
+      "source": [
+        "docs/datasheets/CD_DS_STCC4_D1.pdf p.15"
+      ],
+      "confidence": "high",
+      "notes": "Package3.0±0.15×4.0±0.15mm, height1.17±0.15mm plus0.10mm solder. Protective sensor membrane must not touch case features.",
+      "requires_ventilation": true
+    },
+    {
+      "ref": "IC2",
+      "part": "Texas Instruments OPT4001DTSR",
+      "package": "DTS0008A-MFG",
+      "placement": {
+        "x": 21.0,
+        "y": -25.0,
+        "rotation": "R0"
+      },
+      "bbox": {
+        "x0": -1.0,
+        "x1": 1.0,
+        "y0": -1.1,
+        "y1": 1.1,
+        "z0": 0,
+        "z1": 0.7
+      },
+      "source": [
+        "docs/datasheets/opt4001.pdf p.50"
+      ],
+      "confidence": "high",
+      "notes": "DTS0008A package overall terminal span2.0mm max, length2.2mm max, body width1.3mm max, max height0.6mm plus0.10mm solder. Requires light path above sensor.",
+      "requires_optical_opening": true
+    },
+    {
+      "ref": "C35",
+      "part": "Unspecified 100uF 6.3V 3225 MLCC",
+      "package": "3225-C",
+      "placement": {
+        "x": -20.3,
+        "y": 12.1,
+        "rotation": "R270"
+      },
+      "bbox": {
+        "x0": -1.8,
+        "x1": 1.8,
+        "y0": -1.45,
+        "y1": 1.45,
+        "z0": 0,
+        "z1": 2.8
+      },
+      "source": [
+        "v2 EAGLE 3225-C footprint",
+        "https://www.murata.com/-/media/webrenewal/tool/library/common-pdf/dynamic-model/component-list-d-mlcc-2506.ashx?cvid=20250805040419000000&la=en"
+      ],
+      "confidence": "low",
+      "notes": "Actual capacitor part number absent. Provisional conservative body3.6×2.9×2.7mm plus0.10mm solder uses Murata GRM32ER60J107ME20 of identical100uF6.3V3225 electrical/size class as example; DOES NOT identify fitted manufacturer. Verify actual C35 height before tight final fit."
+    },
+    {
+      "ref": "L1",
+      "part": "TDK VLS3015CX-100M-1",
+      "package": "VLS3015",
+      "placement": {
+        "x": -16.5,
+        "y": 3.2,
+        "rotation": "R270"
+      },
+      "bbox": {
+        "x0": -1.6,
+        "x1": 1.6,
+        "y0": -1.6,
+        "y1": 1.6,
+        "z0": 0,
+        "z1": 1.6
+      },
+      "source": [
+        "https://product.tdk.com/ja/search/inductor/inductor/smd/info?part_no=VLS3015CX-100M-1",
+        "v2 EAGLE PARTS attribute"
+      ],
+      "confidence": "high",
+      "notes": "Actual PARTS is100M1, superseding680M symbolic value. Manufacturer3.0±0.2 square, height1.5mm max plus0.10mm solder."
+    },
+    {
+      "ref": "L2",
+      "part": "TDK VLS3015CX-100M-1",
+      "package": "VLS3015",
+      "placement": {
+        "x": -17.1,
+        "y": -8.8,
+        "rotation": "R90"
+      },
+      "bbox": {
+        "x0": -1.6,
+        "x1": 1.6,
+        "y0": -1.6,
+        "y1": 1.6,
+        "z0": 0,
+        "z1": 1.6
+      },
+      "source": [
+        "https://product.tdk.com/ja/search/inductor/inductor/smd/info?part_no=VLS3015CX-100M-1",
+        "v2 EAGLE PARTS attribute"
+      ],
+      "confidence": "high",
+      "notes": "Actual PARTS is100M1, superseding680M symbolic value. Manufacturer3.0±0.2 square, height1.5mm max plus0.10mm solder."
+    },
+    {
+      "ref": "U1",
+      "part": "Nordic nPM1300-QEAA-R QFN32",
+      "package": "QFN32_5X5_NOR",
+      "placement": {
+        "x": 25.275,
+        "y": 16.15,
+        "rotation": "R0"
+      },
+      "bbox": {
+        "x0": -2.55,
+        "x1": 2.55,
+        "y0": -2.55,
+        "y1": 2.55,
+        "z0": 0,
+        "z1": 1.0
+      },
+      "source": [
+        "docs/datasheets/nPM1300_PS_v1.3.pdf p.158"
+      ],
+      "confidence": "high",
+      "notes": "QFN32 dimensions5.0±0.1mm square, height0.9mm max plus0.10mm solder. Existing Fusion model may be more detailed."
+    }
+  ]
+}

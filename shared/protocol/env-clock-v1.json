@@ -1,0 +1,77 @@
+{
+  "name": "env-clock-v1",
+  "version": 1,
+  "integerEncoding": "little-endian",
+  "serviceUuid": "722acdb0-e77f-468d-a916-67e599e7cffd",
+  "writeUuid": "722acdb1-e77f-468d-a916-67e599e7cffd",
+  "stateUuid": "722acdb2-e77f-468d-a916-67e599e7cffd",
+  "flags": {
+    "known": 1
+  },
+  "utcMinimumMs": 1577836800000,
+  "utcMaximumMs": 4102444799999,
+  "formats": {
+    "write": {
+      "magic": "OT",
+      "size": 12,
+      "fields": [
+        {
+          "name": "version",
+          "type": "u8",
+          "offset": 2
+        },
+        {
+          "name": "reserved",
+          "type": "u8",
+          "offset": 3
+        },
+        {
+          "name": "unix_ms",
+          "type": "u64",
+          "offset": 4
+        }
+      ]
+    },
+    "state": {
+      "magic": "CT",
+      "size": 32,
+      "fields": [
+        {
+          "name": "version",
+          "type": "u8",
+          "offset": 2
+        },
+        {
+          "name": "flags",
+          "type": "u8",
+          "offset": 3
+        },
+        {
+          "name": "boot_id",
+          "type": "u64",
+          "offset": 4
+        },
+        {
+          "name": "clock_revision",
+          "type": "u32",
+          "offset": 12
+        },
+        {
+          "name": "unix_anchor_ms",
+          "type": "u64",
+          "offset": 16
+        },
+        {
+          "name": "uptime_anchor_ms",
+          "type": "u64",
+          "offset": 24
+        }
+      ]
+    }
+  },
+  "compatibility": {
+    "legacyWriter": "env-sensor-v1 OT on characteristic 722acd81",
+    "newWriterPreferred": true,
+    "anchorResolutionCurrentMs": 1000
+  }
+}

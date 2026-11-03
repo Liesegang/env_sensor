@@ -5,6 +5,7 @@ import subprocess
 import tempfile
 
 app = Path(__file__).resolve().parents[1]
+shared_driver = app.parents[1] / "shared/firmware/driver"
 with tempfile.TemporaryDirectory(prefix="outdoor-stcc4-") as temporary:
     root = Path(temporary)
     headers = {
@@ -22,6 +23,7 @@ int i2c_read_dt(const struct i2c_dt_spec *bus, uint8_t *data, size_t size);
         "zephyr/kernel.h": r"""#pragma once
 #include <stdint.h>
 int k_msleep(int32_t duration);
+int64_t k_uptime_get(void);
 """,
         "zephyr/sys/byteorder.h": r"""#pragma once
 #include <stdint.h>
@@ -50,6 +52,7 @@ static bool corrupt;
 
 bool i2c_is_ready_dt(const struct i2c_dt_spec *bus) { (void)bus; return true; }
 int k_msleep(int32_t duration) { sleeps_ms += duration; return 0; }
+int64_t k_uptime_get(void) { return sleeps_ms; }
 int i2c_write_dt(const struct i2c_dt_spec *bus, const uint8_t *data, size_t size) {
     (void)bus;
     writes++;
@@ -129,17 +132,50 @@ int main(void) {
     read_error = -ETIMEDOUT;
     check_unchanged(-ETIMEDOUT, 1, 1);
 
+    /* Card's 1-Hz fixed phase: one command, late fresh packet beyond the
+     * legacy 150-ms retry, a strict ready deadline, and no cached output. */
+    reset_counters();
+    assert(stcc4_read_wait(&sample, 200) == 0);
+    assert(reads == 1 && writes == 1 && sleeps_ms == 1);
+    reset_counters();
+    nacks = 32;
+    assert(stcc4_read_wait(&sample, 200) == 0);
+    assert(reads == 33 && writes == 1 && sleeps_ms == 161);
+    assert(sample.co2_ppm == 402);
+    reset_counters();
+    nacks = 100;
+    memset(&sample, 0x5a, sizeof(sample));
+    struct stcc4_sample before = sample;
+    assert(stcc4_read_wait(&sample, 200) == -EAGAIN);
+    assert(reads == 41 && writes == 1 && sleeps_ms == 200);
+    assert(!memcmp(&sample, &before, sizeof(sample)));
+    reset_counters();
+    corrupt = true;
+    assert(stcc4_read_wait(&sample, 200) == -EBADMSG);
+    assert(reads == 1 && writes == 1 && sleeps_ms == 1);
+    assert(!memcmp(&sample, &before, sizeof(sample)));
+    reset_counters();
+    read_error = -ETIMEDOUT;
+    assert(stcc4_read_wait(&sample, 200) == -ETIMEDOUT);
+    assert(reads == 1 && writes == 1 && sleeps_ms == 1);
+    assert(!memcmp(&sample, &before, sizeof(sample)));
+    reset_counters();
+    assert(stcc4_read_wait(&sample, 201) == -EINVAL);
+    assert(stcc4_read_wait(NULL, 200) == -EINVAL);
+    assert(!reads && !writes && !sleeps_ms);
+
     assert(stcc4_stop() == 0);
     assert(stcc4_read(&sample) == -EACCES);
-    puts("STCC4: ready, timed NACK retry, bounded missing data, command errors, CRC and timeout OK (6 cases)");
+    assert(stcc4_read_wait(&sample, 200) == -EACCES);
+    puts("STCC4: legacy ready/read unchanged; Card bounded polling, late fresh data, missing output unchanged, CRC/transport immediate error OK");
     return 0;
 }
 """)
     executable = root / "test"
     command = ["/usr/bin/cc", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", str(root)]
     for driver in ("common", "stcc4", "sht45"):
-        command += ["-I", str(app / "driver" / driver / "include")]
+        command += ["-I", str(shared_driver / driver / "include")]
     for source in ("common/sensor_bus.c", "common/sensor_codec.c", "stcc4/stcc4.c", "sht45/sht45.c"):
-        command.append(str(app / "driver" / source))
+        command.append(str(shared_driver / source))
     subprocess.run(command + [str(test), "-o", str(executable)], check=True)
     subprocess.run([str(executable)], check=True)

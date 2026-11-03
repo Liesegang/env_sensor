@@ -23,7 +23,7 @@ config APP_SENSOR_READ
 
 rsource "driver/bmv080/Kconfig"
 rsource "driver/as3935/Kconfig"
-rsource "driver/sfa40/Kconfig"
+rsource "../../shared/firmware/driver/sfa40/Kconfig"
 
 menuconfig APP_BUZZER_TEST
 	bool "Play the startup buzzer test"

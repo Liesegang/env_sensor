@@ -1,0 +1,3 @@
+description: Waveshare 3.6 inch Spectra 6 e-paper (E), 400 by 600 pixels
+compatible: "liesegang,epd3in6e"
+include: spi-device.yaml

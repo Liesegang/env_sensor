@@ -19,7 +19,7 @@
 | IC7 | `PARTS=SHT4x-Axx`、ユーザー指定はSHT45 | SHT45 | STCC4の補助I2C |
 | IC8 | partsの`value=STCC4-D-R3`、product IDを取得済み | STCC4 | MCU側I2C `0x64` |
 | IC9 | partsの`value=BMV080`、ユーザーが型番を確認 | BMV080 | MCU側I2C `0x54`、未接続・配線修正が必要 |
-| IC10 | partsの`deviceset=AS3935`を暫定採用、`PARTS`未指定 | AS3935 | MCU側I2C `0x03`は仮設定、未接続 |
+| IC10 | partsの`deviceset=AS3935`を暫定採用、`PARTS`未指定 | AS3935 | MCU側I2C `0x03`、通信・RC校正確認済み、IRQ未接続 |
 
 TWIM30、SCL=P0.03、SDA=P0.04、100kHzを使う。
 R5/R6は5.1kΩの外部プルアップ。PCA9515のENは3.3Vにつながり、
@@ -33,7 +33,7 @@ NACKは未検出、タイムアウト等は異常として表示し中断する�
 
 ## ドライバーと取得値
 
-すべてのモジュールを`driver/`へ置く。各`include/`が公開API。
+共通センサードライバーは`../../shared/firmware/driver/`、outdoor固有のものは`driver/`へ置く。各`include/`が公開API。
 通常のAPIは成功時0、失敗時に負のerrnoを返す。初期化失敗はセンサーごとに表示し、
 ほかのセンサーの取得を続ける。読み取り失敗時には古い値を表示しない。
 
@@ -45,7 +45,7 @@ NACKは未検出、タイムアウト等は異常として表示し中断する�
 | `stcc4` | CO₂ ppm、status、product ID、serial、SHT45のraw温湿度 |
 | `sht45` | STCC4経由のraw値を温度°C・湿度%RHへ変換 |
 | `bmv080` | PM1.0・PM2.5・PM10の質量濃度と粒子数濃度、遮蔽・範囲外フラグ、経過時間。SDK v11.2.0でビルド確認済み、通常構成は無効 |
-| `as3935` | 雷・過大ノイズ・妨害信号のイベント、エネルギー、推定距離・頭上・範囲外、検出設定、RC校正状態。現在は無効 |
+| `as3935` | 雷・過大ノイズ・妨害信号のイベント、エネルギー、推定距離・頭上・範囲外、検出設定、RC校正状態。通常構成で有効 |
 | `sfa40` | HCHO ppb、温度°C、湿度%RH、raw値、暖機状態、product ID、serial。通常構成で有効 |
 | `buzzer` | `buzzer_init()`、`buzzer_start()`、`buzzer_stop()`によるPWM制御 |
 | `common` | SensirionのCRC8・I2Cコマンド、SGP41補償値、OPT4001のデコード |
@@ -61,19 +61,19 @@ SGP41は最初の10秒間をconditioningとし、その間は`raw_nox=0 nox_vali
 Sensirion公式Gas Index Algorithm v3.2.0でVOC Index・NOx Index（1〜500）へ変換する。
 最初の約45秒はアルゴリズムの暖機中として有効フラグをfalseにし、Webでは`—`を表示する。
 NOxはconditioning後から暖機を始める。欠測時は履歴をリセットする。
-raw値は詳細表示・CSV用に保持する。[SGP41の変換と検証](driver/sgp41/README.md)を参照。
+raw値は詳細表示・CSV用に保持する。[SGP41の変換と検証](../../shared/firmware/driver/sgp41/README.md)を参照。
 
 STCC4の測定周期は内部クロックの許容差により1000ms ±150ms。
 データ未準備のNACK時はコマンドを再送せず、150ms後に1回だけ再読する。
 再読でも未準備なら`-EAGAIN`として欠測を通知し、以前の値は再利用しない。
 
-BME690はBosch公式SensorAPI v1.1.0を`driver/bme690/vendor/`に同梱し、
+BME690はBosch公式SensorAPI v1.1.0を`../../shared/firmware/driver/bme690/vendor/`に同梱し、
 校正データから温湿度・気圧・ガス抵抗を計算する。forced mode、heater 300°C / 100ms。
 BSECによるIAQ等は未実装。OPT4001はDTS品の係数437.5µlux/countで変換する。
 
 ## 後で接続するセンサー
 
-SFA40は接続を確認し初期設定で有効。BMV080・AS3935は初期設定で無効。無効なモジュールの初期化・読み取りは呼ばない。
+SFA40・AS3935は接続を確認し初期設定で有効。BMV080は初期設定で無効。無効なモジュールの初期化・読み取りは呼ばない。
 接続後、`prj.conf`で必要なものだけ有効にし、ビルド・書き込みする。
 
 ```ini
@@ -81,14 +81,14 @@ CONFIG_APP_AS3935=y
 CONFIG_APP_SFA40=y
 ```
 
-AS3935のアドレスは`0x03`を仮設定している。実際のモジュールのA0/A1に合わせ、
+AS3935は実機スキャンで`0x03`の応答を確認した。別のモジュールではA0/A1に合わせ、
 Devicetreeの`reg`を`0x01`・`0x02`・`0x03`のいずれかへ変更する。
 現在の回路にはIRQ接続がないため1秒ごとにポーリングし、周期内の複数イベントは
 個別に取得できない。新しい雷かどうかは`lightning`で判定する。
 [AS3935の設定とAPI](driver/as3935/README.md)を参照。
 
 SFA40は電源投入後の最初の1分に`ready=0`、最初の10分に`within_spec=0`を表示する。
-HCHO濃度と合わせて暖機状態を確認する。[SFA40の設定とAPI](driver/sfa40/README.md)を参照。
+HCHO濃度と合わせて暖機状態を確認する。[SFA40の設定とAPI](../../shared/firmware/driver/sfa40/README.md)を参照。
 
 ユーザー提供のBMV080 SDK v11.2.0を`.local/`へ導入し、
 Cortex-M33のsoft-floatライブラリでARMビルドとリンクを確認した。
@@ -262,3 +262,13 @@ PCに挿し替えた実カードのCSV（240行・95列）を読み取り、日�
 14サンプル・1148フィールドを実BLEデータと照合し、すべて一致した。
 SD未挿入中のバッファ超過による173サンプルの欠測も検出した。
 詳細と検証コマンドは[SD記録の実機確認](logging/README.md)を参照。
+
+### AS3935 接続確認（2026-10-04）
+
+通常構成で有効化し、J-Link `69730357`へのバックアップ後の書き込み・検証に成功。
+I2C `0x03`、初期化、TRCO/SRCO校正成功、1秒周期の状態取得を確認した。
+実機BLE通知15件をWebアプリと同じTypeScriptデコーダーで検証し、
+有効マスク`0x6f`、AS3935のerrno=0、1秒間隔、切断後の広告再開を確認。時刻同期も成功した。
+IRQは未配線のためポーリング。実際の雷検出とアンテナ共振調整は未検証。
+現在の設置状態では`noise_high=1`が継続し、雷検出フラグはfalse。
+調整手順とIRQ未接続の制限は[AS3935ドライバー](driver/as3935/README.md)を参照。

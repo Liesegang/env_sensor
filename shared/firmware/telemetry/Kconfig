@@ -1,0 +1,11 @@
+config ENV_TELEMETRY_SECURE
+	bool "Authenticated Secure Connections telemetry with persistent owner bond"
+	depends on BT_PERIPHERAL && BT_SMP_SC_ONLY && BT_SETTINGS
+	depends on BT_SMP_APP_PAIRING_ACCEPT && BT_BONDING_REQUIRED
+	depends on BT_APP_PASSKEY
+	default n
+	help
+	  Require LE security level 4 for telemetry/clock/CCC, show a random
+	  passkey, persist one owner's bond and reload it after bt_enable.
+	  Applications must provide an asynchronous passkey display and a
+	  physically authorized re-pair operation.

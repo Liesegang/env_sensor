@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+app_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+ncs_version="v3.4.1"
+ncs_dir="${NCS_DIR:-/opt/nordic/ncs/${ncs_version}}"
+build_dir="${app_dir}/build"
+board="env_sensor_card/nrf54l15/cpuapp"
+
+run_ncs() {
+    nrfutil sdk-manager toolchain launch --ncs-version "${ncs_version}" \
+        --chdir "${ncs_dir}" -- "$@"
+}
+
+check_tools() {
+    command -v nrfutil >/dev/null
+    [[ -f "${ncs_dir}/nrf/VERSION" ]] || {
+        echo "Missing nRF Connect SDK ${ncs_version}" >&2
+        exit 1
+    }
+}
+
+case "${1:-help}" in
+    build)
+        check_tools
+        run_ncs west build --no-sysbuild --pristine=auto --board "${board}" \
+            --build-dir "${build_dir}" "${app_dir}" -- \
+            -DEXTRA_CONF_FILE="${CARD_EXTRA_CONF_FILE:-}"
+        ;;
+    flash)
+        [[ -n "${2:-}" ]] || { echo "Usage: $0 flash JLINK_SERIAL" >&2; exit 2; }
+        "$0" build
+        nrfutil device device-info --serial-number "$2" --family nrf54l
+        mkdir -p "${app_dir}/.local"
+        backup="${app_dir}/.local/before_flash_$2_$(date -u +%Y%m%dT%H%M%SZ).hex"
+        nrfutil device read --serial-number "$2" --family nrf54l \
+            --address 0 --bytes 0x17D000 --to-file "${backup}"
+        echo "Previous application saved to ${backup}"
+        run_ncs west flash --build-dir "${build_dir}" --runner nrfutil --dev-id "$2"
+        ;;
+    flash-jlink)
+        [[ "${2:-}" =~ ^[0-9]+$ ]] || {
+            echo "Usage: $0 flash-jlink JLINK_SERIAL" >&2; exit 2;
+        }
+        commander="${JLINK_COMMANDER:-/Applications/SEGGER/JLink/JLinkExe}"
+        command -v "${commander}" >/dev/null || {
+            echo "J-Link Commander not found: ${commander}" >&2; exit 1;
+        }
+        # CommandFile paths are quoted for spaces; reject command delimiters.
+        [[ "${app_dir}" != *'"'* && "${app_dir}" != *$'\n'* &&
+           "${app_dir}" != *$'\r'* ]] || {
+            echo 'Application path contains an unsupported quote or newline.' >&2; exit 1;
+        }
+        "$0" build
+        firmware="${build_dir}/zephyr/zephyr.hex"
+        [[ -f "${firmware}" ]] || { echo "Firmware not found: ${firmware}" >&2; exit 1; }
+        mkdir -p "${app_dir}/.local"
+        jlink_run_id="$2_$(date -u +%Y%m%dT%H%M%SZ)_$$"
+        backup="${app_dir}/.local/before_flash_jlink_${jlink_run_id}.bin"
+        backup_log="${app_dir}/.local/backup_jlink_${jlink_run_id}.log"
+        flash_log="${app_dir}/.local/flash_jlink_${jlink_run_id}.log"
+        [[ ! -e "${backup}" ]] || { echo "Backup already exists: ${backup}" >&2; exit 1; }
+        jlink_command_dir="$(mktemp -d "${TMPDIR:-/tmp}/card-fw-jlink.XXXXXX")"
+        trap 'rm -rf -- "${jlink_command_dir}"' EXIT
+        trap 'exit 130' INT
+        trap 'exit 143' TERM
+        jlink_args=(-Device nRF54L15_M33 -If SWD -Speed 1000 -USB "$2"
+                    -AutoConnect 1 -ExitOnError 1 -NoGui 1)
+        printf 'h\nsavebin "%s", 0x0, 0x17D000\ng\nexit\n' "${backup}" \
+            >"${jlink_command_dir}/backup.jlink"
+        if ! "${commander}" "${jlink_args[@]}" \
+            -CommandFile "${jlink_command_dir}/backup.jlink" >"${backup_log}" 2>&1; then
+            echo "J-Link backup failed; see ${backup_log}" >&2
+            tail -n 15 "${backup_log}" >&2
+            exit 1
+        fi
+        [[ -f "${backup}" ]] || { echo "J-Link did not create ${backup}" >&2; exit 1; }
+        backup_bytes="$(wc -c <"${backup}")"
+        if [[ "${backup_bytes}" -ne $((0x17D000)) ]]; then
+            echo "Incomplete backup (${backup_bytes} bytes); see ${backup_log}" >&2
+            exit 1
+        fi
+        echo "Previous application saved to ${backup} (0x17D000 bytes)"
+        # Start programming only after Commander succeeded and the full backup exists.
+        printf 'loadfile "%s"\nr\ng\nexit\n' "${firmware}" \
+            >"${jlink_command_dir}/flash.jlink"
+        if ! "${commander}" "${jlink_args[@]}" \
+            -CommandFile "${jlink_command_dir}/flash.jlink" >"${flash_log}" 2>&1; then
+            echo "J-Link flash failed; see ${flash_log}" >&2
+            tail -n 15 "${flash_log}" >&2
+            exit 1
+        fi
+        grep -E 'Downloading file|Flash download:|Verif|^O\.K\.' "${flash_log}" \
+            | tail -n 12 || true
+        echo "Firmware flashed via J-Link; log: ${flash_log}"
+        ;;
+    rtt)
+        [[ -n "${2:-}" ]] || { echo "Usage: $0 rtt JLINK_SERIAL" >&2; exit 2; }
+        check_tools
+        [[ -f "${build_dir}/zephyr/zephyr.elf" ]] || {
+            echo 'Build the firmware first.' >&2; exit 1;
+        }
+        rtt_address="$(run_ncs arm-zephyr-eabi-nm "${build_dir}/zephyr/zephyr.elf" \
+            | awk '$3 == "_SEGGER_RTT" { print "0x" $1 }')"
+        [[ -n "${rtt_address}" ]] || { echo 'RTT symbol not found.' >&2; exit 1; }
+        logger="${JLINK_RTT_LOGGER:-/Applications/SEGGER/JLink/JLinkRTTLoggerExe}"
+        mkdir -p "${app_dir}/.local"
+        if [[ -e "${app_dir}/.local/rtt.log" ]]; then
+            mv "${app_dir}/.local/rtt.log" \
+                "${app_dir}/.local/rtt_previous_$(date -u +%Y%m%dT%H%M%SZ)_$$.log"
+        fi
+        exec "${logger}" -Device nRF54L15_M33 -If SWD -Speed 1000 \
+            -USB "$2" -RTTAddress "${rtt_address}" -RTTChannel 0 \
+            "${app_dir}/.local/rtt.log"
+        ;;
+    *)
+        echo "Usage: $0 {build|flash JLINK_SERIAL|flash-jlink JLINK_SERIAL|rtt JLINK_SERIAL}"
+        ;;
+esac

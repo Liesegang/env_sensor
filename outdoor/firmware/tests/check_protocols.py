@@ -8,15 +8,16 @@ import tempfile
 import unittest
 
 app_dir = Path(__file__).resolve().parents[1]
+shared_driver = app_dir.parents[1] / "shared/firmware/driver"
 temporary = tempfile.TemporaryDirectory(prefix="outdoor-codec-")
 library_path = Path(temporary.name) / "sensor_codec.dylib"
 subprocess.run(
     [
         "/usr/bin/cc", "-std=c11", "-Wall", "-Wextra", "-Werror", "-shared", "-fPIC",
-        "-I", str(app_dir / "driver/common/include"),
-        "-I", str(app_dir / "driver/sht45/include"),
-        str(app_dir / "driver/sht45/sht45.c"),
-        str(app_dir / "driver/common/sensor_codec.c"), "-o", str(library_path),
+        "-I", str(shared_driver / "common/include"),
+        "-I", str(shared_driver / "sht45/include"),
+        str(shared_driver / "sht45/sht45.c"),
+        str(shared_driver / "common/sensor_codec.c"), "-o", str(library_path),
     ],
     check=True,
 )

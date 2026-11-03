@@ -1,0 +1,28 @@
+mainmenu "Card environment sensor"
+
+source "Kconfig.zephyr"
+rsource "../../shared/firmware/telemetry/Kconfig"
+
+config CARD_TEST_CADENCE
+	bool "Accelerated SD/display hardware verification (40 seconds)"
+	default n
+	help
+	  Diagnostic only. Measurement stays at 1 Hz and BLE at 60 seconds.
+	  SD and display intervals become 40 rather than 600 seconds.
+	  Diagnostic CSV files use the TST prefix.
+
+config CARD_SWITCH_POLL_MS
+	int "Poll interval for switch ports without GPIO interrupts (0 disables)"
+	range 0 1000
+	default 50
+	help
+	  Card v2 switches are on P2, which cannot generate interrupts or wake
+	  the CPU. The application stays in System ON and polls every 50 ms
+	  for responsive UI and asynchronous three-second pairing holds.
+
+config CARD_ALARM_TEST_ON_BOOT
+	bool "Sound the five-beep CO2 alarm once at boot for hardware verification"
+	default n
+	help
+	  Diagnostic only. Exercises the alarm with 1201 ppm without changing
+	  any actual sensor value, SD record, graph or BLE telemetry packet.

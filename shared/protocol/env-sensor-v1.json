@@ -1,0 +1,523 @@
+{
+  "serviceUuid": "722acd80-e77f-468d-a916-67e599e7cffd",
+  "characteristicUuid": "722acd81-e77f-468d-a916-67e599e7cffd",
+  "version": 1,
+  "headerSize": 24,
+  "fragmentHeaderSize": 12,
+  "maxSize": 512,
+  "sensors": [
+    {
+      "id": 1,
+      "key": "opt4001",
+      "name": "OPT4001",
+      "fields": [
+        {
+          "key": "millilux",
+          "type": "u32",
+          "label": "照度",
+          "scale": 0.001,
+          "unit": "lx"
+        },
+        {
+          "key": "mantissa",
+          "type": "u32",
+          "label": "Mantissa"
+        },
+        {
+          "key": "device_id",
+          "type": "u16",
+          "label": "Device ID",
+          "format": "hex"
+        },
+        {
+          "key": "exponent",
+          "type": "u8",
+          "label": "Exponent"
+        },
+        {
+          "key": "counter",
+          "type": "u8",
+          "label": "Counter"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "key": "bme690",
+      "name": "BME690",
+      "fields": [
+        {
+          "key": "temperature_mc",
+          "type": "i32",
+          "label": "温度",
+          "scale": 0.001,
+          "unit": "°C"
+        },
+        {
+          "key": "pressure_pa",
+          "type": "u32",
+          "label": "気圧",
+          "scale": 0.01,
+          "unit": "hPa"
+        },
+        {
+          "key": "humidity_mpercent",
+          "type": "u32",
+          "label": "湿度",
+          "scale": 0.001,
+          "unit": "%RH"
+        },
+        {
+          "key": "gas_resistance_ohm",
+          "type": "u32",
+          "label": "ガス抵抗",
+          "unit": "Ω"
+        },
+        {
+          "key": "chip_id",
+          "type": "u8",
+          "label": "Chip ID",
+          "format": "hex"
+        },
+        {
+          "key": "variant_id",
+          "type": "u8",
+          "label": "Variant ID"
+        },
+        {
+          "key": "status",
+          "type": "u8",
+          "label": "Status",
+          "format": "hex"
+        },
+        {
+          "key": "measurement_index",
+          "type": "u8",
+          "label": "Measurement index"
+        },
+        {
+          "key": "gas_index",
+          "type": "u8",
+          "label": "Gas index"
+        },
+        {
+          "key": "heater_resistance",
+          "type": "u8",
+          "label": "Heater resistance"
+        },
+        {
+          "key": "heater_current",
+          "type": "u8",
+          "label": "Heater current"
+        },
+        {
+          "key": "gas_wait",
+          "type": "u8",
+          "label": "Gas wait"
+        },
+        {
+          "key": "gas_valid",
+          "type": "bool",
+          "label": "Gas valid"
+        },
+        {
+          "key": "heater_stable",
+          "type": "bool",
+          "label": "Heater stable"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "key": "sgp41",
+      "name": "SGP41",
+      "version": 2,
+      "fields": [
+        {
+          "key": "serial_number",
+          "type": "u64",
+          "label": "Serial",
+          "format": "hex"
+        },
+        {
+          "key": "raw_voc",
+          "type": "u16",
+          "label": "VOC raw"
+        },
+        {
+          "key": "raw_nox",
+          "type": "u16",
+          "label": "NOx raw"
+        },
+        {
+          "key": "self_test",
+          "type": "u16",
+          "label": "Self test",
+          "format": "hex"
+        },
+        {
+          "key": "temperature_ticks",
+          "type": "u16",
+          "label": "補償温度 ticks"
+        },
+        {
+          "key": "humidity_ticks",
+          "type": "u16",
+          "label": "補償湿度 ticks"
+        },
+        {
+          "key": "nox_valid",
+          "type": "bool",
+          "label": "NOx valid"
+        },
+        {
+          "key": "conditioning",
+          "type": "bool",
+          "label": "Conditioning"
+        },
+        {
+          "key": "voc_index",
+          "type": "u16",
+          "label": "VOC Index",
+          "unit": "Index"
+        },
+        {
+          "key": "nox_index",
+          "type": "u16",
+          "label": "NOx Index",
+          "unit": "Index"
+        },
+        {
+          "key": "voc_index_valid",
+          "type": "bool",
+          "label": "VOC Index valid"
+        },
+        {
+          "key": "nox_index_valid",
+          "type": "bool",
+          "label": "NOx Index valid"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "key": "stcc4",
+      "name": "STCC4",
+      "fields": [
+        {
+          "key": "serial_number",
+          "type": "u64",
+          "label": "Serial",
+          "format": "hex"
+        },
+        {
+          "key": "product_id",
+          "type": "u32",
+          "label": "Product ID",
+          "format": "hex"
+        },
+        {
+          "key": "temperature_mc",
+          "type": "i32",
+          "label": "SHT45 温度",
+          "source": "sht45",
+          "scale": 0.001,
+          "unit": "°C"
+        },
+        {
+          "key": "humidity_mpercent",
+          "type": "i32",
+          "label": "SHT45 湿度",
+          "source": "sht45",
+          "scale": 0.001,
+          "unit": "%RH"
+        },
+        {
+          "key": "co2_ppm",
+          "type": "i16",
+          "label": "CO₂",
+          "unit": "ppm"
+        },
+        {
+          "key": "raw_temperature",
+          "type": "u16",
+          "source": "sht45",
+          "label": "SHT45 raw temperature"
+        },
+        {
+          "key": "raw_humidity",
+          "type": "u16",
+          "source": "sht45",
+          "label": "SHT45 raw humidity"
+        },
+        {
+          "key": "status",
+          "type": "u16",
+          "label": "Status",
+          "format": "hex"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "key": "bmv080",
+      "name": "BMV080",
+      "fields": [
+        {
+          "key": "pm1_mass_milliug_m3",
+          "type": "i32",
+          "label": "PM1",
+          "scale": 0.001,
+          "unit": "µg/m³"
+        },
+        {
+          "key": "pm2_5_mass_milliug_m3",
+          "type": "i32",
+          "label": "PM2.5",
+          "scale": 0.001,
+          "unit": "µg/m³"
+        },
+        {
+          "key": "pm10_mass_milliug_m3",
+          "type": "i32",
+          "label": "PM10",
+          "scale": 0.001,
+          "unit": "µg/m³"
+        },
+        {
+          "key": "pm1_number_milliparticles_cm3",
+          "type": "i32",
+          "label": "PM1 粒子数",
+          "scale": 0.001,
+          "unit": "particles/cm³"
+        },
+        {
+          "key": "pm2_5_number_milliparticles_cm3",
+          "type": "i32",
+          "label": "PM2.5 粒子数",
+          "scale": 0.001,
+          "unit": "particles/cm³"
+        },
+        {
+          "key": "pm10_number_milliparticles_cm3",
+          "type": "i32",
+          "label": "PM10 粒子数",
+          "scale": 0.001,
+          "unit": "particles/cm³"
+        },
+        {
+          "key": "runtime_ms",
+          "type": "u64",
+          "label": "Runtime",
+          "unit": "ms"
+        },
+        {
+          "key": "sequence",
+          "type": "u32",
+          "label": "Sequence"
+        },
+        {
+          "key": "age_ms",
+          "type": "u32",
+          "label": "Age",
+          "unit": "ms"
+        },
+        {
+          "key": "is_obstructed",
+          "type": "bool",
+          "label": "Obstructed"
+        },
+        {
+          "key": "is_outside_measurement_range",
+          "type": "bool",
+          "label": "Outside range"
+        },
+        {
+          "key": "fresh",
+          "type": "bool",
+          "label": "Fresh"
+        }
+      ],
+      "driver": "bmv080_driver"
+    },
+    {
+      "id": 6,
+      "key": "as3935",
+      "name": "AS3935",
+      "fields": [
+        {
+          "key": "energy",
+          "type": "u32",
+          "label": "雷エネルギー"
+        },
+        {
+          "key": "distance_km",
+          "type": "i16",
+          "label": "推定距離",
+          "unit": "km"
+        },
+        {
+          "key": "interrupt_reason",
+          "type": "u8",
+          "label": "IRQ reason"
+        },
+        {
+          "key": "distance_code",
+          "type": "u8",
+          "label": "Distance code"
+        },
+        {
+          "key": "noise_floor",
+          "type": "u8",
+          "label": "Noise floor"
+        },
+        {
+          "key": "watchdog_threshold",
+          "type": "u8",
+          "label": "Watchdog"
+        },
+        {
+          "key": "spike_rejection",
+          "type": "u8",
+          "label": "Spike rejection"
+        },
+        {
+          "key": "minimum_lightnings",
+          "type": "u8",
+          "label": "Minimum lightnings"
+        },
+        {
+          "key": "tuning_capacitor",
+          "type": "u8",
+          "label": "Tuning capacitor"
+        },
+        {
+          "key": "trco_calibration",
+          "type": "u8",
+          "label": "TRCO calibration"
+        },
+        {
+          "key": "srco_calibration",
+          "type": "u8",
+          "label": "SRCO calibration"
+        },
+        {
+          "key": "lightning",
+          "type": "bool",
+          "label": "雷"
+        },
+        {
+          "key": "noise_high",
+          "type": "bool",
+          "label": "過大ノイズ"
+        },
+        {
+          "key": "disturber",
+          "type": "bool",
+          "label": "妨害信号"
+        },
+        {
+          "key": "storm_overhead",
+          "type": "bool",
+          "label": "頭上"
+        },
+        {
+          "key": "out_of_range",
+          "type": "bool",
+          "label": "範囲外"
+        },
+        {
+          "key": "distance_valid",
+          "type": "bool",
+          "label": "Distance valid"
+        },
+        {
+          "key": "indoor",
+          "type": "bool",
+          "label": "Indoor"
+        },
+        {
+          "key": "powered_down",
+          "type": "bool",
+          "label": "Powered down"
+        },
+        {
+          "key": "disturbers_masked",
+          "type": "bool",
+          "label": "Mask disturbers"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "key": "sfa40",
+      "name": "SFA40",
+      "fields": [
+        {
+          "key": "serial_number",
+          "type": "u64",
+          "label": "Serial",
+          "format": "hex"
+        },
+        {
+          "key": "product_id",
+          "type": "u32",
+          "label": "Product ID",
+          "format": "hex"
+        },
+        {
+          "key": "hcho_millippb",
+          "type": "i32",
+          "label": "ホルムアルデヒド",
+          "scale": 0.001,
+          "unit": "ppb"
+        },
+        {
+          "key": "humidity_mpercent",
+          "type": "i32",
+          "label": "湿度",
+          "scale": 0.001,
+          "unit": "%RH"
+        },
+        {
+          "key": "temperature_mc",
+          "type": "i32",
+          "label": "温度",
+          "scale": 0.001,
+          "unit": "°C"
+        },
+        {
+          "key": "raw_hcho",
+          "type": "u16",
+          "label": "HCHO raw"
+        },
+        {
+          "key": "raw_humidity",
+          "type": "u16",
+          "label": "Humidity raw"
+        },
+        {
+          "key": "raw_temperature",
+          "type": "u16",
+          "label": "Temperature raw"
+        },
+        {
+          "key": "status",
+          "type": "u8",
+          "label": "Status",
+          "format": "hex"
+        },
+        {
+          "key": "ready",
+          "type": "bool",
+          "label": "Ready"
+        },
+        {
+          "key": "within_specification",
+          "type": "bool",
+          "label": "Within specification"
+        }
+      ]
+    }
+  ]
+}

@@ -4,13 +4,18 @@
 
 ```text
 card/
-  hardware/       KiCad / Fusionの回路・基板・3Dモデル
-  firmware/       実装用ディレクトリ
+  hardware/       v1 KiCad / v2 Fusionの回路・基板・3Dモデル
+  firmware/       nRF54L15 / Zephyr
+  software/       SwiftUI / iPhoneのBLE収集・履歴アプリ
 outdoor/
   hardware/       env_sensor_3の回路・基板
-  firmware/       nRF54L15 / Zephyr、driver/に各センサー
+  firmware/       nRF54L15 / Zephyr
   software/       TypeScript / ReactのWeb BLE受信アプリ
-  protocol/       BLEの共通スキーマ・Cコード生成
+  protocol/       共通BLEスキーマへの互換入口
+shared/
+  firmware/driver/     cardとoutdoor共通のセンサー・表示ドライバー
+  firmware/telemetry/  共通BLEエンコーダー・GATT通信
+  protocol/           BLEの共通スキーマ・C / TypeScript / Swiftコード生成
 room/
   hardware/       env_sensor_1aの回路・基板
 docs/
@@ -19,6 +24,9 @@ docs/
 
 Outdoorの開発・検証は[ファームウェア](outdoor/firmware/README.md)、
 [Web受信アプリ](outdoor/software/README.md)、[BLE仕様](outdoor/protocol/README.md)を参照。
+[Card firmware](card/firmware/README.md)はv2基板で毎分測定・BLE送信、
+10分ごとのSD一括記録、1時間ごとの電子ペーパー更新を行う。
+[iPhoneアプリ](card/software/README.md)は共通BLEで受信し、バックグラウンド収集・端末内の履歴保存・JSON / CSV書き出しを行う。
 資料の一覧は[データシート](docs/datasheets/README.md)にある。
 
 BMV080のIC9はセンサーpinとコネクターpadの対応が反転している。

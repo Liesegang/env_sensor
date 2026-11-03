@@ -4,7 +4,7 @@ import subprocess
 import tempfile
 
 app = Path(__file__).resolve().parents[1]
-driver = app / 'driver/sgp41'
+driver = app.parents[1] / 'shared/firmware/driver/sgp41'
 source = r'''
 #include <assert.h>
 #include <stdio.h>

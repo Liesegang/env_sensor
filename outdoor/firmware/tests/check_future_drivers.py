@@ -152,10 +152,15 @@ int i2c_burst_read_dt(const struct i2c_dt_spec *bus, uint8_t reg, uint8_t *data,
 library_path = root / "future_drivers.dylib"
 command = ["/usr/bin/cc", "-std=c11", "-Wall", "-Wextra", "-Werror", "-shared", "-fPIC",
            "-I", str(root)]
-for driver in ("common", "sfa40", "as3935"):
-    command += ["-I", str(app / "driver" / driver / "include")]
-for source in ("common/sensor_bus.c", "common/sensor_codec.c", "sfa40/sfa40.c",
-               "sfa40/sfa40_decode.c", "as3935/as3935.c", "as3935/as3935_decode.c"):
+shared_driver = app.parents[1] / "shared/firmware/driver"
+command += ["-I", str(shared_driver / "common/include")]
+command += ["-I", str(shared_driver / "sfa40/include")]
+command += ["-I", str(app / "driver/as3935/include")]
+for source in ("sensor_bus.c", "sensor_codec.c"):
+    command.append(str(shared_driver / "common" / source))
+for source in ("sfa40.c", "sfa40_decode.c"):
+    command.append(str(shared_driver / "sfa40" / source))
+for source in ("as3935/as3935.c", "as3935/as3935_decode.c"):
     command.append(str(app / "driver" / source))
 subprocess.run(command + [str(mock), "-o", str(library_path)], check=True)
 lib = ct.CDLL(str(library_path))

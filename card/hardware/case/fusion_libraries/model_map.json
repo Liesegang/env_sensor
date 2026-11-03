@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "units": "mm",
+  "coordinate_system": "EAGLE package XY origin before element rotation; PCB component surface z=0. Generic models and envelope models include assembled solder allowance. Vendor transforms are explicitly recorded.",
+  "source_board": "card/hardware/v2/card_env_sensor_1.fbrd",
+  "models": [
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|1005K",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "1005K",
+      "refs": [
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C51"
+      ],
+      "confidence": "low",
+      "source": [
+        "v2 embedded EAGLE package 1005K, layer 51 body outline / pad origin"
+      ],
+      "notes": "Generic 1.0x0.5mm package body; assumed assembled height 0.65mm. Exact part/height is unspecified. Shared R/C/inductor footprint uses a single safe nominal shape.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_1005K.step",
+      "bbox": {
+        "x0": -0.5,
+        "x1": 0.5,
+        "y0": -0.25,
+        "y1": 0.25,
+        "z0": 0.0,
+        "z1": 0.65
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|LED1608",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "LED1608",
+      "refs": [
+        "LED1"
+      ],
+      "confidence": "low",
+      "source": [
+        "v2 embedded EAGLE package LED1608, layer 51 body outline / pad origin"
+      ],
+      "notes": "Generic 1.6x0.8mm package body; assumed assembled height 0.9mm. Exact part/height is unspecified. Shared R/C/inductor footprint uses a single safe nominal shape.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_LED1608.step",
+      "bbox": {
+        "x0": -0.8,
+        "x1": 0.8,
+        "y0": -0.4,
+        "y1": 0.4,
+        "z0": 0.0,
+        "z1": 0.9
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|1X6IDC_1R27",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "1X6IDC_1R27",
+      "refs": [
+        "CON3"
+      ],
+      "confidence": "low",
+      "source": [
+        "v2 embedded EAGLE package 1X6IDC_1R27, layer 51 body outline / pad origin"
+      ],
+      "notes": "Optional debug header model: six0.4mm square pins on1.27mm pitch, plastic7.62x1.524x1.8mm, assumed top5.3mm, trimmed tails toPCB underside+0.5mm. Actual population and actual height need confirmation.",
+      "height_assumed": true,
+      "population_pending": true,
+      "model_kind": "optional_header_assumption",
+      "status": "ready",
+      "filename": "models/dac_1X6IDC_1R27.step",
+      "bbox": {
+        "x0": -4.445,
+        "x1": 3.175,
+        "y0": -0.762,
+        "y1": 0.762,
+        "z0": -2.1,
+        "z1": 5.300000000000001
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|2015",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "2015",
+      "refs": [
+        "C50"
+      ],
+      "confidence": "low",
+      "source": [
+        "v2 embedded EAGLE package 2015, layer 51 body outline / pad origin"
+      ],
+      "notes": "Generic 2.0x1.5mm package body; assumed assembled height 1.3mm. Exact part/height is unspecified. Shared R/C/inductor footprint uses a single safe nominal shape.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_2015.step",
+      "bbox": {
+        "x0": -1.0,
+        "x1": 1.0,
+        "y0": -0.75,
+        "y1": 0.75,
+        "z0": 0.0,
+        "z1": 1.3
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|SOT23-3",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "SOT23-3",
+      "refs": [
+        "FET1",
+        "FET2",
+        "FET3"
+      ],
+      "confidence": "medium",
+      "source": [
+        "v2 embedded EAGLE package SOT23-3, layer 51 body outline / pad origin"
+      ],
+      "notes": "Generic SOT23-3 body 3.0x1.4mm, terminal span2.9mm, assumed assembled height1.3mm. Pad positions are x±0.95,y=-1.1 and x0,y=+1.08. Covers IRLML6344/6402 and 2SC3265 footprint types.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_SOT23-3.step",
+      "bbox": {
+        "x0": -1.5,
+        "x1": 1.5,
+        "y0": -1.45,
+        "y1": 1.45,
+        "z0": 0.0,
+        "z1": 1.3
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|SK-12D11VG3",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "SK-12D11VG3",
+      "refs": [
+        "SW1"
+      ],
+      "confidence": "medium",
+      "source": [
+        "card/hardware/3dmodels/SK-12D11VG3.step",
+        "card/hardware/3dmodels/SK-12D11VG3.SOURCE.md"
+      ],
+      "notes": "Existing supplier STEP at its original XY origin; through-hole legs clipped atz=-2.1mm for actual1.6mm PCB and0.5mm remaining tails. Unchanged assembled top4.8mm.",
+      "model_kind": "vendor_step_trimmed_leads",
+      "status": "ready",
+      "filename": "models/dac_SK-12D11VG3.step",
+      "bbox": {
+        "x0": -4.300000000000001,
+        "x1": 4.30000000000001,
+        "y0": -4.689999980526002,
+        "y1": 2.25,
+        "z0": -2.1000000000000023,
+        "z1": 4.800000000000001
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|DM3AT",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "DM3AT",
+      "refs": [
+        "SD1"
+      ],
+      "confidence": "medium",
+      "source": [
+        "https://www.hirose.com/product/document?clcode=CL0609-0033-6-00&documentid=D49662_en&documenttype=Catalog&lang=en&productname=DM3AT-SF-PEJ2M5&series=DM3",
+        "v2 EAGLE DM3AT footprint body lines layer 21"
+      ],
+      "notes": "Catalog body 15.95×13.85×1.68mm. XY bbox follows actual footprint body rectangle plus ~0.1mm. Bbox z includes 0.05mm assumed tolerance and 0.10mm solder. Exact suffix not in PCB PARTS. Insertion is toward local -X, card projects from local +X.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/dac_DM3AT.step",
+      "bbox": {
+        "x0": -4.85,
+        "x1": 11.6,
+        "y0": -2.1,
+        "y1": 11.95,
+        "z0": 0.0,
+        "z1": 1.83
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|PH2_2",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "PH2_2",
+      "refs": [
+        "CN1"
+      ],
+      "confidence": "medium",
+      "source": [
+        "https://www.jst-mfg.com/product/pdf/jpn/PH.pdf pp.1,3",
+        "v2 EAGLE PH2_2 footprint"
+      ],
+      "notes": "Exact part is unspecified in PARTS. 5.9mm wide footprint and side-entry housing Y=-1.6..6.25 match JST PH side entry. Manufacturer nominal housing height 4.8mm, depth7.6mm. Bbox includes small uncertainty. Mated PHR-2 plug is also needed; nominal assembly depth9.6mm.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/dac_PH2_2.step",
+      "bbox": {
+        "x0": -3.05,
+        "x1": 3.05,
+        "y0": -1.7,
+        "y1": 6.349999999999999,
+        "z0": 0.0,
+        "z1": 4.9
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|USB-C-P",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "USB-C-P",
+      "refs": [
+        "CON4"
+      ],
+      "confidence": "medium",
+      "source": [
+        "docs/datasheets/ujc-hp-3-smt-tr.pdf p.2",
+        "v2 EAGLE USB-C-P footprint"
+      ],
+      "notes": "Exact PCB PARTS is absent. Repo USB-C drawing has matching 8.64mm mounting-post pitch and 3.8mm spacing. Nominal shell 8.94×6.9×3.16mm. Bounding box uses outline/footprint +0.20mm tolerance. Drawing PCB assumption0.8mm differs from actual1.6mm; clipped post length should follow user0.5mm protrusion. Opening at local -Y.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/dac_USB-C-P.step",
+      "bbox": {
+        "x0": -4.67,
+        "x1": 4.67,
+        "y0": -2.8,
+        "y1": 4.9,
+        "z0": 0.0,
+        "z1": 3.36
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|1608A",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "1608A",
+      "refs": [
+        "C22",
+        "C1",
+        "C5",
+        "C3",
+        "C6",
+        "C11",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C20",
+        "C21",
+        "C23",
+        "C24",
+        "C25",
+        "C27",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "R11",
+        "R17",
+        "C42",
+        "C43",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "L4",
+        "C52"
+      ],
+      "confidence": "low",
+      "source": [
+        "v2 embedded EAGLE package 1608A, layer 51 body outline / pad origin"
+      ],
+      "notes": "Generic 1.6x0.8mm package body; assumed assembled height 1.0mm. Exact part/height is unspecified. Shared R/C/inductor footprint uses a single safe nominal shape.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_1608A.step",
+      "bbox": {
+        "x0": -0.8,
+        "x1": 0.8,
+        "y0": -0.4,
+        "y1": 0.4,
+        "z0": 0.0,
+        "z1": 1.0
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|2012A",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "2012A",
+      "refs": [
+        "R16",
+        "R5"
+      ],
+      "confidence": "low",
+      "source": [
+        "v2 embedded EAGLE package 2012A, layer 51 body outline / pad origin"
+      ],
+      "notes": "Generic 2.0x1.25mm package body; assumed assembled height 0.7mm. Exact part/height is unspecified. Shared R/C/inductor footprint uses a single safe nominal shape.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_2012A.step",
+      "bbox": {
+        "x0": -1.0,
+        "x1": 1.0,
+        "y0": -0.625,
+        "y1": 0.625,
+        "z0": 0.0,
+        "z1": 0.7
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|1005A",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "1005A",
+      "refs": [
+        "R14",
+        "C12",
+        "C28",
+        "R15",
+        "R4",
+        "R7",
+        "R8",
+        "R18",
+        "R19",
+        "R12",
+        "R13",
+        "R20",
+        "R21",
+        "R1",
+        "C2",
+        "C4",
+        "R2",
+        "R3"
+      ],
+      "confidence": "low",
+      "source": [
+        "v2 embedded EAGLE package 1005A, layer 51 body outline / pad origin"
+      ],
+      "notes": "Generic 1.0x0.5mm package body; assumed assembled height 0.65mm. Exact part/height is unspecified. Shared R/C/inductor footprint uses a single safe nominal shape.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_1005A.step",
+      "bbox": {
+        "x0": -0.5,
+        "x1": 0.5,
+        "y0": -0.25,
+        "y1": 0.25,
+        "z0": 0.0,
+        "z1": 0.65
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|SOD-123-2",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "SOD-123-2",
+      "refs": [
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "confidence": "medium",
+      "source": [
+        "v2 embedded EAGLE package SOD-123-2, layer 51 body outline / pad origin",
+        "https://www.nxp.com/packages/SOD123.html"
+      ],
+      "notes": "SOD123 body from 2.69x1.6mm footprint outline, height assumed conservatively 1.35mm; terminal span 3.8mm. Generic geometry for MBR0530 / 1N4148W; exact vendor tolerance is not identified.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_SOD-123-2.step",
+      "bbox": {
+        "x0": -1.9,
+        "x1": 1.9000000000000001,
+        "y0": -0.8,
+        "y1": 0.8,
+        "z0": 0.0,
+        "z1": 1.35
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|3225-C",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "3225-C",
+      "refs": [
+        "C35"
+      ],
+      "confidence": "low",
+      "source": [
+        "v2 EAGLE 3225-C footprint",
+        "https://www.murata.com/-/media/webrenewal/tool/library/common-pdf/dynamic-model/component-list-d-mlcc-2506.ashx?cvid=20250805040419000000&la=en"
+      ],
+      "notes": "Actual capacitor part number absent. Provisional conservative body3.6×2.9×2.7mm plus0.10mm solder uses Murata GRM32ER60J107ME20 of identical100uF6.3V3225 electrical/size class as example; DOES NOT identify fitted manufacturer. Verify actual C35 height before tight final fit.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/dac_3225-C.step",
+      "bbox": {
+        "x0": -1.8,
+        "x1": 1.8,
+        "y0": -1.45,
+        "y1": 1.45,
+        "z0": 0.0,
+        "z1": 2.8
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA|PT3-POW",
+      "library": "dac",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.xVDk-EW6TGKC700NINYEjA",
+      "package": "PT3-POW",
+      "refs": [
+        "PT1",
+        "PT2"
+      ],
+      "status": "excluded",
+      "filename": null,
+      "confidence": "high",
+      "source": [
+        "card/hardware/readme.md",
+        "v2 board footprint"
+      ],
+      "notes": "No physical component: SFA40 not fitted / off-board drawing, or bare plated power/test point."
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|ES4L15BA1",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "ES4L15BA1",
+      "refs": [
+        "IC5"
+      ],
+      "confidence": "high",
+      "source": [
+        "docs/datasheets/ES4L15BA1_DataSheet_V1_0_20260624E.pdf pp.4,23",
+        "v2 EAGLE ES4L15BA1 footprint"
+      ],
+      "notes": "Outline 8.55×3.25mm, general XY tolerance ±0.2mm, maximum total height 1.00mm. Bbox uses maximal overall size 8.75×3.45 and adds 0.10mm solder height. Module centered at footprint origin. Antenna portion is at local +X, x=0.875..4.275 nominal.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_ES4L15BA1.step",
+      "bbox": {
+        "x0": -4.375,
+        "x1": 4.375,
+        "y0": -1.725,
+        "y1": 1.725,
+        "z0": 0.0,
+        "z1": 1.1
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|CONN50X1_FH34SRJ-50S-0.5SH(50)",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "CONN50X1_FH34SRJ-50S-0.5SH(50)",
+      "refs": [
+        "J1"
+      ],
+      "confidence": "high",
+      "source": [
+        "https://www.hirose.com/product/p/CL0580-1266-2-50",
+        "v2 EAGLE CONN50X1_FH34SRJ-50S-0.5SH(50) body lines layer 51"
+      ],
+      "notes": "Manufacturer nominal length 27.0mm, width 3.8mm, height 1.0mm. Embedded footprint body is 27.1526×3.81mm; conservative bbox covers both. Closed actuator only; FPC fold has separate keepout.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_CONN50X1_FH34SRJ-50S-0_5SH_50.step",
+      "bbox": {
+        "x0": -13.75,
+        "x1": 13.75,
+        "y0": -2.05,
+        "y1": 2.05,
+        "z0": 0.0,
+        "z1": 1.1
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|SON80P244X244X95-7N",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "SON80P244X244X95-7N",
+      "refs": [
+        "IC6"
+      ],
+      "confidence": "high",
+      "source": [
+        "docs/datasheets/Sensirion_Gas_Sensors_Datasheet_SGP41.pdf p.18",
+        "card/hardware/readme.md"
+      ],
+      "notes": "Actual SGP41 supersedes SGP40 symbolic value. Package2.44±0.1 square, height0.85±0.1mm plus0.10mm solder. Top gas opening must remain unobstructed.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_SON80P244X244X95-7N.step",
+      "bbox": {
+        "x0": -1.27,
+        "x1": 1.27,
+        "y0": -1.27,
+        "y1": 1.27,
+        "z0": 0.0,
+        "z1": 1.05
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|SHT40BD1BR2",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "SHT40BD1BR2",
+      "refs": [
+        "IC7"
+      ],
+      "confidence": "high",
+      "source": [
+        "docs/datasheets/HT_DS_Datasheet_SHT4x_5.pdf p.15",
+        "card/hardware/readme.md"
+      ],
+      "notes": "Bare SHT4x package1.5±0.1mm square, height0.54±0.05mm plus0.10mm solder. Uses actual SHT45, no filter membrane specified. Top opening must remain unobstructed.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_SHT40BD1BR2.step",
+      "bbox": {
+        "x0": -0.8,
+        "x1": 0.8,
+        "y0": -0.8,
+        "y1": 0.8,
+        "z0": 0.0,
+        "z1": 0.69
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|SW_TMHU27",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "SW_TMHU27",
+      "refs": [
+        "S1"
+      ],
+      "confidence": "high",
+      "source": [
+        "card/hardware/3dmodels/LeverSwitch_TMHU27.step",
+        "docs/datasheets/TMHU27.pdf p.2",
+        "v2 SW_TMHU27 footprint"
+      ],
+      "notes": "Vendor origin corrected by RX180 then translate(0,-0.1,2.7)mm. Contacts seat atz0.1 (0.1mm solder allowance), postsx±2.5,y=-0.2,z=-0.35..0.2; three contact centresy=3.575 agree with footprint3.55 within0.025mm. Body2.5mm plus0.1mm contact step and0.1mm solder. Footprint element rotation remains unapplied.",
+      "source_transform": {
+        "rotation_axis": [
+          1,
+          0,
+          0
+        ],
+        "rotation_deg": 180,
+        "translation_mm": [
+          0,
+          -0.1,
+          2.7
+        ]
+      },
+      "alignment_confirmed": true,
+      "model_kind": "vendor_step_origin_corrected",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_SW_TMHU27.step",
+      "bbox": {
+        "x0": -7.40337760755184,
+        "x1": 7.40337760755184,
+        "y0": -7.95,
+        "y1": 4.15,
+        "z0": -0.3499999999999998,
+        "z1": 2.700000000000001
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|BME688",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "BME688",
+      "refs": [
+        "IC11"
+      ],
+      "confidence": "high",
+      "source": [
+        "docs/datasheets/BME690_datasheet.pdf p.53",
+        "card/hardware/readme.md"
+      ],
+      "notes": "Actual BME690 supersedes BME688 symbolic value. Drawing3.00mm square, height0.95±0.05mm. Conservative XY±0.05mm; height adds0.10mm solder. Top vent must be unobstructed.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_BME688.step",
+      "bbox": {
+        "x0": -1.55,
+        "x1": 1.55,
+        "y0": -1.55,
+        "y1": 1.55,
+        "z0": 0.0,
+        "z1": 1.1
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|SFA40",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "SFA40",
+      "refs": [
+        "ICU$1"
+      ],
+      "status": "excluded",
+      "filename": null,
+      "confidence": "high",
+      "source": [
+        "card/hardware/readme.md",
+        "v2 board footprint"
+      ],
+      "notes": "No physical component: SFA40 not fitted / off-board drawing, or bare plated power/test point."
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|SFA40-PIN",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "SFA40-PIN",
+      "refs": [
+        "ICU$2"
+      ],
+      "status": "excluded",
+      "filename": null,
+      "confidence": "high",
+      "source": [
+        "card/hardware/readme.md",
+        "v2 board footprint"
+      ],
+      "notes": "No physical component: SFA40 not fitted / off-board drawing, or bare plated power/test point."
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|SFA40-PIN2",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "SFA40-PIN2",
+      "refs": [
+        "IC1"
+      ],
+      "status": "excluded",
+      "filename": null,
+      "confidence": "high",
+      "source": [
+        "card/hardware/readme.md",
+        "v2 board footprint"
+      ],
+      "notes": "No physical component: SFA40 not fitted / off-board drawing, or bare plated power/test point."
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|STCC4DR3",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "STCC4DR3",
+      "refs": [
+        "IC12"
+      ],
+      "confidence": "high",
+      "source": [
+        "docs/datasheets/CD_DS_STCC4_D1.pdf p.15"
+      ],
+      "notes": "Package3.0±0.15×4.0±0.15mm, height1.17±0.15mm plus0.10mm solder. Protective sensor membrane must not touch case features.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_STCC4DR3.step",
+      "bbox": {
+        "x0": -1.575,
+        "x1": 1.575,
+        "y0": -2.075,
+        "y1": 2.075,
+        "z0": 0.0,
+        "z1": 1.42
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|VLS3015",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "VLS3015",
+      "refs": [
+        "L1",
+        "L2"
+      ],
+      "confidence": "high",
+      "source": [
+        "https://product.tdk.com/ja/search/inductor/inductor/smd/info?part_no=VLS3015CX-100M-1",
+        "v2 EAGLE PARTS attribute"
+      ],
+      "notes": "Actual PARTS is100M1, superseding680M symbolic value. Manufacturer3.0±0.2 square, height1.5mm max plus0.10mm solder.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_VLS3015.step",
+      "bbox": {
+        "x0": -1.6,
+        "x1": 1.6,
+        "y0": -1.6,
+        "y1": 1.6,
+        "z0": 0.0,
+        "z1": 1.6
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|QFN32_5X5_NOR",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "QFN32_5X5_NOR",
+      "refs": [
+        "U1"
+      ],
+      "confidence": "high",
+      "source": [
+        "docs/datasheets/nPM1300_PS_v1.3.pdf p.158"
+      ],
+      "notes": "QFN32 dimensions5.0±0.1mm square, height0.9mm max plus0.10mm solder. Existing Fusion model may be more detailed.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_QFN32_5X5_NOR.step",
+      "bbox": {
+        "x0": -2.55,
+        "x1": 2.55,
+        "y0": -2.55,
+        "y1": 2.55,
+        "z0": 0.0,
+        "z1": 1.0
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|INDC2016X100N",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "INDC2016X100N",
+      "refs": [
+        "L3",
+        "L5"
+      ],
+      "confidence": "medium",
+      "source": [
+        "v2 embedded EAGLE package INDC2016X100N, layer 51 body outline / pad origin",
+        "v2 PARTS DFE201610E-2R2M=P2"
+      ],
+      "notes": "2.0x1.6x1.0mm nominal inductor class; body model uses footprint maximum outline2.2x1.8mm and height1.1mm including solder. No detailed winding/core model.",
+      "model_kind": "package_envelope_with_terminals",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_INDC2016X100N.step",
+      "bbox": {
+        "x0": -1.1,
+        "x1": 1.1,
+        "y0": -0.9,
+        "y1": 0.9,
+        "z0": 0.0,
+        "z1": 1.1
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|CST2C",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "CST2C",
+      "refs": [
+        "D1"
+      ],
+      "confidence": "medium",
+      "source": [
+        "v2 embedded EAGLE package CST2C, layer 51 body outline / pad origin",
+        "https://toshiba.semicon-storage.com/us/semiconductor/design-development/package/diode.html"
+      ],
+      "notes": "Toshiba CST2C nominal1.6x0.8x0.48mm, plus0.1mm solder. Long axis along local Y per embedded footprint; not per-board rotation.",
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_CST2C.step",
+      "bbox": {
+        "x0": -0.40000000000000013,
+        "x1": 0.40000000000000013,
+        "y0": -0.8,
+        "y1": 0.8000000000000002,
+        "z0": 0.0,
+        "z1": 0.58
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw|DTS0008A-MFG",
+      "library": "SamacSys_Parts",
+      "origin_library_urn": "urn:adsk.wipprod:fs.file:vf.T-CSTi-pRMmWCWEgogZOWw",
+      "package": "DTS0008A-MFG",
+      "refs": [
+        "IC2"
+      ],
+      "confidence": "high",
+      "source": [
+        "docs/datasheets/opt4001.pdf p.50"
+      ],
+      "notes": "DTS0008A package overall terminal span2.0mm max, length2.2mm max, body width1.3mm max, max height0.6mm plus0.10mm solder. Requires light path above sensor.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/SamacSys_Parts_DTS0008A-MFG.step",
+      "bbox": {
+        "x0": -1.0,
+        "x1": 1.0,
+        "y0": -1.1,
+        "y1": 1.1,
+        "z0": 0.0,
+        "z1": 0.7
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "noURN|UGCT7525",
+      "library": "dac",
+      "origin_library_urn": null,
+      "package": "UGCT7525",
+      "refs": [
+        "BUZZ1"
+      ],
+      "confidence": "high",
+      "source": [
+        "https://akizukidenshi.com/goodsaffix/UGCT7525AN4.pdf",
+        "card/firmware/README.md",
+        "v2 EAGLE UGCT7525 footprint"
+      ],
+      "notes": "Manufacturer body7.5±0.2×7.5±0.2×2.5±0.2mm. Height includes0.10mm solder. Side sound port near local +X as footprint arrow indicates; after R180 it points toward board -X.",
+      "model_kind": "conservative_body_envelope",
+      "status": "ready",
+      "filename": "models/dac_UGCT7525.step",
+      "bbox": {
+        "x0": -3.85,
+        "x1": 3.85,
+        "y0": -3.85,
+        "y1": 3.85,
+        "z0": 0.0,
+        "z1": 2.8
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "noURN|1N4148W",
+      "library": "dac",
+      "origin_library_urn": null,
+      "package": "1N4148W",
+      "refs": [
+        "D6"
+      ],
+      "confidence": "medium",
+      "source": [
+        "v2 embedded EAGLE package 1N4148W, layer 51 body outline / pad origin",
+        "https://www.nxp.com/packages/SOD123.html"
+      ],
+      "notes": "SOD123 body from 2.69x1.6mm footprint outline, height assumed conservatively 1.35mm; terminal span 3.8mm. Generic geometry for MBR0530 / 1N4148W; exact vendor tolerance is not identified.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_1N4148W.step",
+      "bbox": {
+        "x0": -1.9,
+        "x1": 1.9000000000000001,
+        "y0": -0.8,
+        "y1": 0.8,
+        "z0": 0.0,
+        "z1": 1.35
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    },
+    {
+      "key": "noURN|SOT23-3",
+      "library": "dac",
+      "origin_library_urn": null,
+      "package": "SOT23-3",
+      "refs": [
+        "TR1"
+      ],
+      "confidence": "medium",
+      "source": [
+        "v2 embedded EAGLE package SOT23-3, layer 51 body outline / pad origin"
+      ],
+      "notes": "Generic SOT23-3 body 3.0x1.4mm, terminal span2.9mm, assumed assembled height1.3mm. Pad positions are x±0.95,y=-1.1 and x0,y=+1.08. Covers IRLML6344/6402 and 2SC3265 footprint types.",
+      "height_assumed": true,
+      "model_kind": "generic_package_with_terminals",
+      "status": "ready",
+      "filename": "models/dac_SOT23-3.step",
+      "bbox": {
+        "x0": -1.5,
+        "x1": 1.5,
+        "y0": -1.45,
+        "y1": 1.45,
+        "z0": 0.0,
+        "z1": 1.3
+      },
+      "all_solids_valid": true,
+      "solid_count": 1
+    }
+  ],
+  "summary": {
+    "library_package_keys": 33,
+    "unique_package_names": 32,
+    "ready": 29,
+    "excluded": 4,
+    "pending": 0,
+    "unique_step_files": 28
+  },
+  "status_semantics": "ready means a local STEP is prepared. It does not mean the STEP has been attached to a Fusion 3D package or registered in a Fusion library."
+}

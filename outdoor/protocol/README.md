@@ -1,4 +1,4 @@
-# Outdoor BLE protocol v1
+# Environment Sensor BLE protocol v1（Outdoor 実装）
 
 Service: `722acd80-e77f-468d-a916-67e599e7cffd`
 
@@ -8,7 +8,8 @@ Service: `722acd80-e77f-468d-a916-67e599e7cffd`
 
 ## 共通スキーマ
 
-`outdoor-v1.json`がUUID・フィールド順・型・表示単位の共通定義。
+編集元は`shared/protocol/env-sensor-v1.json`。Outdoor、Card、今後のRoomで同じUUID・フィールド順・型・表示単位を使う。
+`outdoor-v1.json`は受信アプリとの互換性を保つために生成するコピー。
 すべての整数はlittle-endian。フィールドごとに直列化し、C構造体のパディングを含めない。
 `u64`のserialはWeb側で正確な16桁hex文字列、稼働時間はbigintとして保持する。
 単位付きの整数はraw値を送信し、Web側で`scale`を適用する。
@@ -18,7 +19,8 @@ python3 outdoor/protocol/generate.py
 python3 outdoor/protocol/generate.py --check
 ```
 
-生成対象は`outdoor/firmware/telemetry/include/telemetry.h`と`telemetry_encode.c`。
+共通構造体・エンコーダーを`shared/firmware/telemetry`へ生成し、
+`outdoor/firmware/telemetry/include/telemetry.h`と`telemetry_encode.c`は既存APIのアダプターとして生成する。
 Webは同じJSONを直接参照する。ワイヤー互換性が変わる場合はversionを上げる。
 
 ## 測定パケット（Readの値）
@@ -45,7 +47,8 @@ SGP41のblock versionは2（VOC/NOx Index追加）、それ以外は1。
 error=0のときだけJSONに定義した全フィールドを送る。負のerrnoのときbodyはerrorの2byteのみ。
 無効設定のセンサーはブロックがない。正常な0と、無効・待機・失敗を区別できる。
 SGP41のIndex有効フラグ・NOx raw有効フラグ、SFA40の暖機、BMV080の更新状態等は各ドライバーのフラグも確認する。
-VOC/NOxは公式Gas Index Algorithmの計算値（1〜500）を使用し、rawは診断用にも送る。
+OutdoorのVOC/NOxは公式Gas Index Algorithmの計算値（1〜500）を使用し、rawは診断用にも送る。
+Cardの1分ごとの短いraw測定ではIndex有効フラグをfalseにする。同じフィールドの有効フラグで区別する。
 STCC4ブロックの温湿度フィールドは`source=sht45`とし、WebではSTCC4とSHT45を別表示する。
 SGP41の補償元は同じパケットのSTCC4/SHT45→BME690→既定値の成功状態から分かる。
 未知のセンサーIDのTLVはWeb側で読み飛ばす。
